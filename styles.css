@@ -1,5 +1,5 @@
 /* ==========================================================================
-   TELEGRAM.NEXUS - High-Tech Ecosystem Showcase Design System
+   TELEGRAM.MEOW - High-Tech Ecosystem Showcase Design System
    ========================================================================== */
 
 :root {
@@ -351,6 +351,21 @@ body {
   color: var(--tg-blue-light);
   margin-bottom: 1.5rem;
   box-shadow: 0 0 20px rgba(36, 161, 222, 0.15);
+}
+
+.hero-author-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 0 0.15rem;
+  border-bottom: 1px dashed rgba(82, 197, 255, 0.6);
+  transition: all var(--transition-fast);
+}
+
+.hero-author-link:hover {
+  color: var(--accent-cyan);
+  border-bottom-color: var(--accent-cyan);
+  text-shadow: 0 0 8px rgba(6, 182, 212, 0.6);
 }
 
 .pulse-dot {
@@ -1352,6 +1367,19 @@ body {
   color: var(--text-dim);
   flex-wrap: wrap;
   gap: 1rem;
+}
+
+.author-link {
+  color: var(--tg-blue-light);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color var(--transition-fast), text-shadow var(--transition-fast);
+}
+
+.author-link:hover {
+  color: var(--accent-cyan);
+  text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+  text-decoration: underline;
 }
 
 .footer-status-pill {

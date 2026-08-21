@@ -1,6 +1,6 @@
 /**
  * ============================================================================
- * TELEGRAM.NEXUS - Ecosystem Showcase Engine
+ * TELEGRAM.MEOW - Ecosystem Showcase Engine
  * Interactive Catalog, Filtering, Search, Modal Dialogs & Fallback Assets
  * ============================================================================
  */
@@ -87,7 +87,7 @@ const PROJECTS_DATA = [
       "/top <game> - Display global and group high scores",
       "@game_hub_bot - Share game cards in any chat"
     ],
-    launchUrl: "https://t.me/nexus_game_bot",
+    launchUrl: "https://t.me/meow_game_bot",
     sourceUrl: "https://github.com/anu69-web/telegram-bots/blob/main/game_bot.py"
   },
   {
@@ -280,7 +280,7 @@ const PROJECTS_DATA = [
       "/mode <casual|spicy|deep> - Set game intensity level",
       "/duel - Launch 2-player pass-and-play duel"
     ],
-    launchUrl: "https://t.me/truth_dare_nexus_bot",
+    launchUrl: "https://t.me/truth_dare_meow_bot",
     sourceUrl: "https://github.com/anu69-web/telegram-bots/blob/main/truth_dare_bot.py"
   },
 

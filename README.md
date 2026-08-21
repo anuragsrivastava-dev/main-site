@@ -1,6 +1,8 @@
-# 🌐 Telegram.Nexus - Showcase Landing Page
+# 🌐 Telegram.Meow - Showcase Landing Page
 
 Welcome to the landing page showcase for your full-stack Telegram Bot and Web Games ecosystem.
+
+**Author:** [anu69-web](https://github.com/anu69-web)
 
 This site is optimized for deployment to your custom domain or GitHub Pages.
 
