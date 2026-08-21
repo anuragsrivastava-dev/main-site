@@ -16,7 +16,7 @@ const PROJECTS_DATA = [
     categories: ["bot", "devtools"],
     badge: "💻 Dev Tools",
     icon: "🐍",
-    image: "assets/images/bots/pybot.png",
+    themeColor: "#3b82f6",
     description: "Interactive Python execution bot and Web Console running code in isolated subprocesses with dynamic input patching.",
     longDescription: "Run and test Python scripts directly within Telegram or via the web console. Features sandboxed subprocess execution, dynamic stdin patching for `input()` prompts, 10-second timeout safety nets, and real-time streaming output capture.",
     features: [
@@ -42,7 +42,7 @@ const PROJECTS_DATA = [
     categories: ["bot", "game", "multiplayer"],
     badge: "🏆 Score Sync",
     icon: "🕹️",
-    image: "assets/images/bots/game-bot.png",
+    themeColor: "#f59e0b",
     description: "Telegram gaming hub serving interactive HTML5 game cards, inline game queries, and synchronized group chat leaderboards.",
     longDescription: "The central launcher for the entire Telegram Web Games suite. Enables users to launch games inside Telegram WebApps or share inline game cards to group chats with automated score tracking via Telegram's getGameHighScores and setGameScore APIs.",
     features: [
@@ -68,7 +68,7 @@ const PROJECTS_DATA = [
     categories: ["bot", "utility", "multiplayer"],
     badge: "📍 Geo/Weather",
     icon: "💖",
-    image: "assets/images/bots/hud-bot.png",
+    themeColor: "#ec4899",
     description: "Long-distance couple HUD computing live time offsets, real-time Open-Meteo weather metrics, and Haversine separation distance.",
     longDescription: "Designed for couples in different time zones. Computes live geographic separation using the Haversine spherical formula, pulls real-time weather and temperature differentials via Open-Meteo API, and tracks milestone countdowns in SQLite.",
     features: [
@@ -95,7 +95,7 @@ const PROJECTS_DATA = [
     categories: ["bot", "game", "multiplayer"],
     badge: "🃏 2-Player Duel",
     icon: "🧠",
-    image: "assets/images/bots/memory-bot.png",
+    themeColor: "#8b5cf6",
     description: "Multiplayer Telegram card-flipping game with concurrency locks, variable grid sizes, mismatch timeouts, and SQLite leaderboards.",
     longDescription: "A real-time card memory battle playable entirely via Telegram inline keyboard buttons. Supports 3x4 to 4x6 grid difficulties, concurrency mutex locking to prevent simultaneous taps, and persistent win streak stats.",
     features: [
@@ -121,7 +121,7 @@ const PROJECTS_DATA = [
     categories: ["bot", "utility", "automation"],
     badge: "🏷️ Daily Cron",
     icon: "📉",
-    image: "assets/images/bots/price-tracker.png",
+    themeColor: "#10b981",
     description: "Automated e-commerce price monitor with daily scheduled checks, Jina AI proxy fallbacks, and instant price-drop alerts.",
     longDescription: "Tracks product price shifts on Amazon and Flipkart. Features automated daily price checks at 12:00 PM IST via APScheduler JobQueue, fallback web scraping via Jina AI reader proxy, and target price alerts.",
     features: [
@@ -148,7 +148,7 @@ const PROJECTS_DATA = [
     categories: ["bot", "devtools", "education"],
     badge: "🎓 100% Mastery",
     icon: "📜",
-    image: "assets/images/bots/quiz-bot.png",
+    themeColor: "#6366f1",
     description: "Interactive Python mastery quest with chapter progression unlocks requiring 100% score and dynamic admin authoring.",
     longDescription: "An interactive coding curriculum directly inside Telegram. Features progressive chapter unlocking (requiring 100% mastery to advance), structured explanations, and admin CRUD commands for adding questions.",
     features: [
@@ -174,7 +174,7 @@ const PROJECTS_DATA = [
     categories: ["bot", "utility"],
     badge: "🔗 Instant API",
     icon: "⚡",
-    image: "assets/images/bots/shortener-bot.png",
+    themeColor: "#06b6d4",
     description: "Lightweight URL shortening and unshortening engine with multi-provider failover routing (ulvis.net, da.gd) and redirect unwinding.",
     longDescription: "A high-speed URL utility bot. Shrinks long links through multi-provider failover APIs and unwinds obscure shortened links to reveal real landing URLs, safety redirects, and HTTP status headers.",
     features: [
@@ -200,7 +200,7 @@ const PROJECTS_DATA = [
     categories: ["bot", "utility"],
     badge: "📬 15s Poller",
     icon: "🛡️",
-    image: "assets/images/bots/tempmail-bot.png",
+    themeColor: "#14b8a6",
     description: "Disposable temporary email bot with multi-provider routing (Mail.tm, Guerrilla Mail) and background polling for OTP verification.",
     longDescription: "Creates throwaway temporary inboxes on demand. Regularly polls mail servers every 15 seconds to deliver verification codes, OTPs, and email messages straight to your Telegram chat.",
     features: [
@@ -227,7 +227,7 @@ const PROJECTS_DATA = [
     categories: ["bot", "game", "multiplayer"],
     badge: "🌶️ Zero-Repeat",
     icon: "🎲",
-    image: "assets/images/bots/truth-dare.png",
+    themeColor: "#f43f5e",
     description: "2-Player Truth or Dare party game with auto-refilling shuffled prompt decks and categorized modes (Casual, Deep, Spicy).",
     longDescription: "An engaging 2-player social game. Uses a zero-repeat auto-shuffling prompt algorithm, categorized deck intensity selectors, and pass-and-play turn switching.",
     features: [
@@ -256,15 +256,14 @@ const PROJECTS_DATA = [
     categories: ["game", "multiplayer"],
     badge: "⚔️ WebRTC P2P",
     icon: "♟️",
-    image: "assets/images/games/chess.png",
+    themeColor: "#334155",
     description: "High-performance Staunton SVG chess engine with full move validation, live material calculation, themes, and P2P in-game chat.",
     longDescription: "A full-featured Staunton SVG chess game built for Telegram WebApp and browser play. Complete with en passant, castling, pawn promotion, check/checkmate detection, live material advantage tracking, custom board themes, and sub-50ms peer-to-peer multiplayer.",
     features: [
       "Complete chess rule engine (en passant, castling, promotion, checkmate)",
       "PeerJS WebRTC peer-to-peer real-time networking",
       "Live material advantage differential counter",
-      "In-game chat and audio synthesis sound effects",
-      "Telegram setGameScore match win synchronization"
+      "In-game chat and audio synthesis sound effects"
     ],
     tech: ["Vanilla JS", "SVG Staunton", "PeerJS WebRTC", "Web Audio API"],
     commands: [
@@ -283,21 +282,20 @@ const PROJECTS_DATA = [
     categories: ["game", "multiplayer"],
     badge: "🃏 Real-Time Duel",
     icon: "🎴",
-    image: "assets/images/games/uno.png",
+    themeColor: "#ef4444",
     description: "Fast-paced 2-player Uno card duel with wild color pickers, skip/reverse mechanics, penalty stacking, and WebRTC syncing.",
     longDescription: "A sleek HTML5 recreation of the classic Uno duel. Features card draw animation, wild card color picking modal, +2 and +4 penalty stacking rules, and instant game state synchronization over WebRTC.",
     features: [
       "Complete standard Uno rule set with action card mechanics",
       "+2 and +4 card stacking penalty mechanics",
       "Wild color picker wheel dialog",
-      "Sub-50ms WebRTC action state synchronization",
-      "Synthesized sound effects for card placement and Uno shouts"
+      "Sub-50ms WebRTC action state synchronization"
     ],
-    tech: ["HTML5 Canvas", "CSS3 3D Transforms", "PeerJS", "Web Audio"],
+    tech: ["HTML5 Canvas", "CSS3 3D", "PeerJS", "Web Audio"],
     commands: [
       "Tap cards matching active color or number",
       "Select color from popup wheel when playing Wild cards",
-      "Click UNO button before discarding your penultimate card"
+      "Click UNO button before discarding penultimate card"
     ],
     launchUrl: "https://anu69-web.github.io/telegram-games/uno/",
     sourceUrl: "https://github.com/anu69-web/telegram-games/tree/main/uno"
@@ -310,7 +308,7 @@ const PROJECTS_DATA = [
     categories: ["game", "multiplayer"],
     badge: "🏓 60 FPS Canvas",
     icon: "🏓",
-    image: "assets/images/games/paddle.png",
+    themeColor: "#0284c7",
     description: "High-octane multiplayer Pong duel with inverted perspective rendering, 5-heart life bars, dynamic ball spin, and rally streaks.",
     longDescription: "Fast-paced retro arcade pong duel with inverted dual perspective so each player sees their paddle on the home side. Features particle collision sparks, acceleration physics, and life bar depletion.",
     features: [
@@ -336,20 +334,20 @@ const PROJECTS_DATA = [
     categories: ["game", "multiplayer"],
     badge: "🎲 3D Board Game",
     icon: "🐍",
-    image: "assets/images/games/snakes.png",
+    themeColor: "#16a34a",
     description: "3D animated 100-tile board game with dice physics, player hop animation, sliding ladders, and single-turn roll-again mechanics.",
     longDescription: "The timeless board game brought to life with animated 3D tokens and isometric board rendering. Features smooth piece hopping, physics-based ladder climbing, sliding snake traps, and bonus turns on rolling a 6.",
     features: [
       "Animated tile-by-tile piece hopping transitions",
       "Smooth glide animations for snake slides and ladder climbs",
       "Dice roll physics with extra roll bonus on rolling 6",
-      "Synchronized multiplayer turn rotation and leaderboard tracking"
+      "Synchronized multiplayer turn rotation"
     ],
     tech: ["CSS 3D Transforms", "Canvas Animation", "PeerJS WebRTC"],
     commands: [
       "Tap the 3D dice to roll your turn (1-6)",
       "Watch token automatically navigate board tiles",
-      "First player to land exactly on tile 100 wins the match"
+      "First player to land exactly on tile 100 wins match"
     ],
     launchUrl: "https://anu69-web.github.io/telegram-games/snakes/",
     sourceUrl: "https://github.com/anu69-web/telegram-games/tree/main/snakes"
@@ -362,7 +360,7 @@ const PROJECTS_DATA = [
     categories: ["game", "arcade"],
     badge: "🕹️ Single/Multi",
     icon: "🐤",
-    image: "assets/images/games/flappy-bird.png",
+    themeColor: "#eab308",
     description: "Addictive canvas arcade runner with particle physics, shield power-ups, bonus collectibles, and difficulty scaling.",
     longDescription: "A polished recreation of the classic arcade runner. Features fluid particle jump trails, shield bubbles, coin collection multipliers, dynamic pipe gap scaling, and high score saving.",
     features: [
@@ -388,7 +386,7 @@ const PROJECTS_DATA = [
     categories: ["game", "multiplayer", "arcade"],
     badge: "🐸 Tactical Arena",
     icon: "🐸",
-    image: "assets/images/games/frog-fight.png",
+    themeColor: "#84cc16",
     description: "Grid-based tactical arena brawler where players tongue-grapple flies, jump between sinking lilypads, and outmaneuver rivals.",
     longDescription: "An action-packed arcade duel set on an unstable pond of sinking lilypads. Players use tongue whips to collect insects, place water ripples to nudge opponents, and fight for survival as pads submerge.",
     features: [
@@ -401,7 +399,7 @@ const PROJECTS_DATA = [
     commands: [
       "Tap adjacent lilypad to hop",
       "Aim and fire tongue grapple to snatch flies or strike opponent",
-      "Stay on dry lilypads to avoid sinking into the pond"
+      "Stay on dry lilypads to avoid sinking into pond"
     ],
     launchUrl: "https://anu69-web.github.io/telegram-games/frog-fight/",
     sourceUrl: "https://github.com/anu69-web/telegram-games/tree/main/frog-fight"
@@ -414,7 +412,7 @@ const PROJECTS_DATA = [
     categories: ["game", "arcade"],
     badge: "💖 Fast Reflexes",
     icon: "❤️",
-    image: "assets/images/games/heart-catcher.png",
+    themeColor: "#f43f5e",
     description: "Touch and mouse-controlled arcade catcher featuring bonus multipliers, falling hazard avoidance, and combo streaks.",
     longDescription: "A vibrant reflex and rhythm catcher game. Catch falling hearts and golden stars while dodging broken glass and thunderstorm hazards to build up high score combos.",
     features: [
@@ -440,7 +438,7 @@ const PROJECTS_DATA = [
     categories: ["game", "arcade"],
     badge: "🌀 3D Helix Drop",
     icon: "🌀",
-    image: "assets/images/games/helix-jump.png",
+    themeColor: "#06b6d4",
     description: "3D tower descent game with rotating helix platforms, bouncy ball physics, obstacle avoidance, and stage clear streaks.",
     longDescription: "Rotate the cylindrical helix tower to drop your bouncing ball through open slits down the skyscraper. Avoid hazardous red sectors, trigger speed boosts, and shatter through platforms.",
     features: [
@@ -466,19 +464,19 @@ const PROJECTS_DATA = [
     categories: ["game", "arcade"],
     badge: "🏢 Isometric Stack",
     icon: "🏗️",
-    image: "assets/images/games/tower-builder.png",
+    themeColor: "#a855f7",
     description: "Isometric tower stacking game with slice physics, dynamic pastel color gradients, perfect-drop combo bonuses, and height scoring.",
     longDescription: "Stack oscillating building blocks with pinpoint precision. Overhanging block segments slice off and tumble down with realistic gravity. Land perfect alignments to expand your block dimensions and achieve sky-high records.",
     features: [
       "Dynamic block slicing physics with falling debris particles",
-      "Chroma gradient generation that transitions as the tower ascends",
+      "Chroma gradient generation that transitions as tower ascends",
       "Perfect placement combo sound chords and block expansion",
       "Perspective camera climbing as tower height grows"
     ],
     tech: ["Isometric Canvas 2D", "Dynamic Color Gradients", "Web Audio API"],
     commands: [
       "Tap screen or press Spacebar to drop the moving block",
-      "Align blocks perfectly with the layer below to avoid trimming",
+      "Align blocks perfectly with layer below to avoid trimming",
       "Chain 5 perfect drops to trigger block expansion bonus"
     ],
     launchUrl: "https://anu69-web.github.io/telegram-games/tower-builder/",
@@ -490,15 +488,50 @@ const PROJECTS_DATA = [
 let activeTheme = localStorage.getItem("telegram_meow_theme") || "pink";
 let sfxEnabled = localStorage.getItem("telegram_meow_sfx") !== "false";
 let currentSelectedProject = PROJECTS_DATA[0];
-let activeCategoryFilter = "all";
 
-// Themes Config
+// Themes Configuration
 const THEMES = [
-  { id: "pink", name: "🌸 Sakura Pink", dotColor: "#fca5b9" },
+  { id: "pink", name: "🌸 Sakura Pink", dotColor: "#f9849b" },
   { id: "cyan", name: "🌊 Cyber Cyan", dotColor: "#00b4d8" },
   { id: "violet", name: "💜 Retro Violet", dotColor: "#c084fc" },
   { id: "dark", name: "🖤 Midnight Dark", dotColor: "#38bdf8" }
 ];
+
+// Generate Thematic SVG Graphic for Every Project Card
+function generateCardSVG(project) {
+  const c = project.themeColor || "#f43f5e";
+  return `
+    <svg viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:100%;">
+      <defs>
+        <linearGradient id="grad-${project.id}" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#ffffff" />
+          <stop offset="50%" stop-color="${c}" stop-opacity="0.25" />
+          <stop offset="100%" stop-color="${c}" stop-opacity="0.85" />
+        </linearGradient>
+        <pattern id="grid-${project.id}" width="16" height="16" patternUnits="userSpaceOnUse">
+          <path d="M 16 0 L 0 0 0 16" fill="none" stroke="rgba(0,0,0,0.06)" stroke-width="1"/>
+        </pattern>
+      </defs>
+      <rect width="200" height="130" fill="url(#grad-${project.id})" />
+      <rect width="200" height="130" fill="url(#grid-${project.id})" />
+      
+      <!-- Outer Decorative Shapes -->
+      <circle cx="170" cy="20" r="30" fill="${c}" opacity="0.2" />
+      <circle cx="30" cy="110" r="22" fill="#ffffff" opacity="0.4" />
+      <rect x="140" y="85" width="45" height="30" rx="6" fill="#111111" opacity="0.08" />
+      
+      <!-- Center Icon Graphic -->
+      <circle cx="100" cy="55" r="32" fill="#ffffff" stroke="#111111" stroke-width="2" />
+      <text x="100" y="66" font-size="34" text-anchor="middle" font-family="sans-serif">${project.icon}</text>
+      
+      <!-- Bottom Badge Strip -->
+      <rect x="0" y="108" width="200" height="22" fill="#111111" />
+      <text x="100" y="123" font-size="10" font-weight="bold" fill="#ffffff" text-anchor="middle" font-family="'JetBrains Mono', monospace" letter-spacing="1">
+        ${project.tech[0].toUpperCase()} • ${project.type.toUpperCase()}
+      </text>
+    </svg>
+  `;
+}
 
 // Web Audio API Retro Sound Effects
 let audioCtx = null;
@@ -536,19 +569,19 @@ function playSound(type = "click") {
       osc.stop(now + 0.2);
     } else if (type === "theme") {
       osc.type = "sine";
-      osc.frequency.setValueAtTime(580, now);
-      osc.frequency.exponentialRampToValueAtTime(740, now + 0.08);
+      osc.frequency.setValueAtTime(520, now);
+      osc.frequency.exponentialRampToValueAtTime(780, now + 0.08);
       gain.gain.setValueAtTime(0.12, now);
       gain.gain.exponentialRampToValueAtTime(0.001, now + 0.08);
       osc.start(now);
       osc.stop(now + 0.08);
     }
   } catch (e) {
-    // AudioContext ignored if blocked
+    // Audio ignored if blocked
   }
 }
 
-// Initialize Application
+// App Initialization
 document.addEventListener("DOMContentLoaded", () => {
   applyTheme(activeTheme, false);
   renderAllShelves();
@@ -577,7 +610,7 @@ function cycleTheme() {
   const currentIndex = THEMES.findIndex(t => t.id === activeTheme);
   const nextIndex = (currentIndex + 1) % THEMES.length;
   applyTheme(THEMES[nextIndex].id, true);
-  showToast(`Theme switched to ${THEMES[nextIndex].name}`);
+  showToast(`Theme: ${THEMES[nextIndex].name}`);
 }
 
 // Shelf Horizontal Scrolling Helper
@@ -589,7 +622,7 @@ function scrollShelf(trackId, delta) {
   }
 }
 
-// Render Project Card HTML
+// Render Project Card Element
 function createCardElement(project) {
   const card = document.createElement("div");
   card.className = "neo-card";
@@ -598,16 +631,10 @@ function createCardElement(project) {
   }
   card.setAttribute("data-id", project.id);
 
-  const isGame = project.type === "game";
-  const categoryTag = isGame ? "WebRTC Game" : "Telegram Bot";
-
   card.innerHTML = `
     <div class="neo-card-media">
-      <img src="${project.image}" alt="${project.title}" class="neo-card-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-      <div class="neo-card-fallback-svg" style="display:none;">
-        <span class="fallback-icon-large">${project.icon}</span>
-      </div>
-      <span class="card-type-badge-floating">${project.badge}</span>
+      ${generateCardSVG(project)}
+      <span class="card-badge-pill">${project.badge}</span>
     </div>
     <div class="neo-card-body">
       <div class="neo-card-title" title="${project.title}">${project.title}</div>
@@ -655,7 +682,6 @@ function renderAllShelves() {
 
   if (utilsTrack) {
     utilsTrack.innerHTML = "";
-    // Pick popular dev utilities and 2-player games
     const picks = PROJECTS_DATA.filter(p => 
       p.id === "pybot" || p.id === "chess" || p.id === "tempmail-bot" || p.id === "uno" || p.id === "price-tracker" || p.id === "paddle"
     );
@@ -665,7 +691,7 @@ function renderAllShelves() {
   }
 }
 
-// Filter Cards Inside a Shelf
+// Local Filter for Cards in Shelf
 function filterShelfTrack(trackId, query) {
   const track = document.getElementById(trackId);
   if (!track) return;
@@ -714,11 +740,11 @@ function renderQueueList() {
   });
 }
 
-// Select Project (Updates Queue Banner & Bottom Dock)
+// Select Project (Sync with Banner & Dock)
 function selectProject(project, triggerSfx = true) {
   currentSelectedProject = project;
 
-  // Update active state in cards
+  // Active Outline in Cards
   document.querySelectorAll(".neo-card").forEach(card => {
     if (card.getAttribute("data-id") === project.id) {
       card.classList.add("active-selected");
@@ -727,7 +753,7 @@ function selectProject(project, triggerSfx = true) {
     }
   });
 
-  // Update Right Queue Banner
+  // Right Queue Banner
   const queueThumb = document.getElementById("queueActiveThumb");
   const queueTitle = document.getElementById("queueActiveTitle");
   const queueSub = document.getElementById("queueActiveSub");
@@ -738,7 +764,7 @@ function selectProject(project, triggerSfx = true) {
   if (queueSub) queueSub.textContent = project.subtitle;
   if (queueBadge) queueBadge.textContent = project.type.toUpperCase();
 
-  // Update Bottom Dock
+  // Bottom Dock
   const dockEmoji = document.getElementById("dockThumbEmoji");
   const dockTitle = document.getElementById("dockCurrentTitle");
   const dockType = document.getElementById("dockCurrentType");
@@ -778,7 +804,6 @@ function openModal(project) {
     sourceBtn.href = project.sourceUrl;
   }
 
-  // Render Features & Commands
   const featuresHtml = project.features.map(f => `<li>${f}</li>`).join("");
   const techHtml = project.tech.map(t => `<span class="modal-tech-pill">${t}</span>`).join("");
   const commandsHtml = project.commands.map(cmd => `
@@ -840,14 +865,14 @@ function closeModal() {
 function copyCommand(cmdText) {
   const cleanCmd = cmdText.split(" - ")[0].trim();
   navigator.clipboard.writeText(cleanCmd).then(() => {
-    showToast(`Copied "${cleanCmd}" to clipboard!`);
+    showToast(`Copied "${cleanCmd}"!`);
     playSound("click");
   }).catch(() => {
     showToast(`Copied to clipboard!`);
   });
 }
 
-// Toast Notification
+// Toast
 let toastTimeout = null;
 function showToast(message) {
   const toast = document.getElementById("toastBox");
@@ -859,19 +884,33 @@ function showToast(message) {
   clearTimeout(toastTimeout);
   toastTimeout = setTimeout(() => {
     toast.classList.remove("active");
-  }, 2200);
+  }, 2000);
 }
 
-// Navigation & Event Listeners
+// Event Handlers Setup
 function setupEventListeners() {
   // Theme Toggle Button
   const themeBtn = document.getElementById("themeSwitchBtn");
-  if (themeBtn) {
-    themeBtn.addEventListener("click", cycleTheme);
-  }
+  if (themeBtn) themeBtn.addEventListener("click", cycleTheme);
   const navThemeToggle = document.getElementById("navThemeToggle");
-  if (navThemeToggle) {
-    navThemeToggle.addEventListener("click", cycleTheme);
+  if (navThemeToggle) navThemeToggle.addEventListener("click", cycleTheme);
+
+  // Top Nav History Buttons
+  const navPrevBtn = document.getElementById("navPrevBtn");
+  if (navPrevBtn) {
+    navPrevBtn.addEventListener("click", () => {
+      const idx = PROJECTS_DATA.findIndex(p => p.id === currentSelectedProject.id);
+      const prevIdx = (idx - 1 + PROJECTS_DATA.length) % PROJECTS_DATA.length;
+      selectProject(PROJECTS_DATA[prevIdx]);
+    });
+  }
+  const navNextBtn = document.getElementById("navNextBtn");
+  if (navNextBtn) {
+    navNextBtn.addEventListener("click", () => {
+      const idx = PROJECTS_DATA.findIndex(p => p.id === currentSelectedProject.id);
+      const nextIdx = (idx + 1) % PROJECTS_DATA.length;
+      selectProject(PROJECTS_DATA[nextIdx]);
+    });
   }
 
   // SFX Toggle
@@ -884,7 +923,7 @@ function setupEventListeners() {
       const status = document.getElementById("sfxStatus");
       if (icon) icon.textContent = sfxEnabled ? "🔊" : "🔇";
       if (status) status.textContent = sfxEnabled ? "SFX: ON" : "SFX: OFF";
-      showToast(sfxEnabled ? "Sound effects enabled" : "Sound effects muted");
+      showToast(sfxEnabled ? "Sound enabled" : "Sound muted");
       if (sfxEnabled) playSound("click");
     });
   }
@@ -912,19 +951,13 @@ function setupEventListeners() {
 
   // Shelf Local Filter Inputs
   const filterBots = document.getElementById("filterBotsInput");
-  if (filterBots) {
-    filterBots.addEventListener("input", (e) => filterShelfTrack("botsTrack", e.target.value));
-  }
+  if (filterBots) filterBots.addEventListener("input", (e) => filterShelfTrack("botsTrack", e.target.value));
   const filterGames = document.getElementById("filterGamesInput");
-  if (filterGames) {
-    filterGames.addEventListener("input", (e) => filterShelfTrack("gamesTrack", e.target.value));
-  }
+  if (filterGames) filterGames.addEventListener("input", (e) => filterShelfTrack("gamesTrack", e.target.value));
   const filterUtils = document.getElementById("filterUtilsInput");
-  if (filterUtils) {
-    filterUtils.addEventListener("input", (e) => filterShelfTrack("utilsTrack", e.target.value));
-  }
+  if (filterUtils) filterUtils.addEventListener("input", (e) => filterShelfTrack("utilsTrack", e.target.value));
 
-  // Dock Info Button
+  // Dock Controls
   const dockInfoBtn = document.getElementById("dockInfoBtn");
   if (dockInfoBtn) {
     dockInfoBtn.addEventListener("click", () => {
@@ -932,7 +965,6 @@ function setupEventListeners() {
     });
   }
 
-  // Dock Previous / Next / Shuffle
   const dockPrevBtn = document.getElementById("dockPrevBtn");
   if (dockPrevBtn) {
     dockPrevBtn.addEventListener("click", () => {
@@ -956,7 +988,7 @@ function setupEventListeners() {
   function pickRandom() {
     const randomIdx = Math.floor(Math.random() * PROJECTS_DATA.length);
     selectProject(PROJECTS_DATA[randomIdx]);
-    showToast(`Picked: ${PROJECTS_DATA[randomIdx].title}`);
+    showToast(`Selected: ${PROJECTS_DATA[randomIdx].title}`);
   }
   if (dockShuffleBtn) dockShuffleBtn.addEventListener("click", pickRandom);
   if (randomPickBtn) randomPickBtn.addEventListener("click", pickRandom);
@@ -1021,7 +1053,6 @@ function setupEventListeners() {
 // Global Keyboard Shortcuts
 function setupKeyboardShortcuts() {
   document.addEventListener("keydown", (e) => {
-    // Ctrl+K to search
     if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
       e.preventDefault();
       const globalSearch = document.getElementById("globalSearchInput");
@@ -1030,7 +1061,6 @@ function setupKeyboardShortcuts() {
         globalSearch.select();
       }
     }
-    // Escape to close modal
     if (e.key === "Escape") {
       closeModal();
     }
