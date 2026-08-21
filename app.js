@@ -633,13 +633,11 @@ function createProjectCard(project) {
 
       <div class="card-actions-bar">
         ${project.id === "pybot" ? `
-          <a href="${project.launchUrl}" target="_blank" rel="noopener noreferrer" class="btn-card-launch" onclick="playSound('launch')">
-            <span>🚀 @py_runbot</span>
-            <span>↗</span>
+          <a href="${project.launchUrl}" target="_blank" rel="noopener noreferrer" class="btn-card-launch" title="Open Telegram Bot (@py_runbot)" onclick="playSound('launch')">
+            <span>🚀</span>
           </a>
-          <a href="${project.consoleUrl}" target="_blank" rel="noopener noreferrer" class="btn-card-launch" style="background: var(--bg-surface); border: 2px solid var(--border-color);" title="Direct In-Browser Python IDE" onclick="playSound('launch')">
-            <span>💻 Web Console</span>
-            <span>↗</span>
+          <a href="${project.consoleUrl}" target="_blank" rel="noopener noreferrer" class="btn-card-launch" style="background: var(--bg-surface); border: 2px solid var(--border-color);" title="Launch Python Web Console IDE" onclick="playSound('launch')">
+            <span>💻</span>
           </a>
         ` : `
           <a href="${project.launchUrl}" target="_blank" rel="noopener noreferrer" class="btn-card-launch" onclick="playSound('launch')">
