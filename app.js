@@ -1,7 +1,7 @@
 /**
  * ============================================================================
- * TELEGRAM.MEOW - Neobrutalist Dashboard Engine
- * Multi-Theme, Interactive Shelves, Audio Synthesizer & Quick Launcher
+ * TELEGRAM.MEOW - Modern Responsive Engine
+ * Multi-Theme, Real-Time Filtering, Audio Synthesizer & Interactive Modals
  * ============================================================================
  */
 
@@ -10,15 +10,15 @@ const PROJECTS_DATA = [
   // --- TELEGRAM BOTS ---
   {
     id: "pybot",
-    title: "PyBot & Console",
-    subtitle: "Remote Python Sandbox",
+    title: "PyBot & Web Console",
+    subtitle: "Remote Python Execution Sandbox",
     type: "bot",
     categories: ["bot", "devtools"],
     badge: "💻 Dev Tools",
     icon: "🐍",
     themeColor: "#3b82f6",
     description: "Interactive Python execution bot and Web Console running code in isolated subprocesses with dynamic input patching.",
-    longDescription: "Run and test Python scripts directly within Telegram or via the web console. Features sandboxed subprocess execution, dynamic stdin patching for `input()` prompts, 10-second timeout safety nets, and real-time streaming output capture.",
+    longDescription: "Run and test Python scripts directly within Telegram or via the companion web console. Features sandboxed subprocess execution, dynamic stdin patching for `input()` prompts, 10-second timeout safety nets, and real-time streaming output capture.",
     features: [
       "Isolated subprocess execution environment",
       "Dynamic input() prompt stream handling",
@@ -36,7 +36,7 @@ const PROJECTS_DATA = [
   {
     id: "game-bot",
     title: "Gaming Hub Bot",
-    subtitle: "Arcade Card Launcher",
+    subtitle: "Telegram Arcade Launcher",
     type: "bot",
     categories: ["bot", "game", "multiplayer"],
     badge: "🏆 Score Sync",
@@ -61,7 +61,7 @@ const PROJECTS_DATA = [
   {
     id: "hud-bot",
     title: "LDR HUD Bot",
-    subtitle: "Live Couple Dashboard",
+    subtitle: "Couple Distance & Weather HUD",
     type: "bot",
     categories: ["bot", "utility", "multiplayer"],
     badge: "📍 Geo/Weather",
@@ -112,7 +112,7 @@ const PROJECTS_DATA = [
   {
     id: "price-tracker",
     title: "Deal Price Tracker",
-    subtitle: "Amazon & Flipkart Monitor",
+    subtitle: "Amazon & Flipkart Price Alerts",
     type: "bot",
     categories: ["bot", "utility", "automation"],
     badge: "🏷️ Daily Cron",
@@ -214,7 +214,7 @@ const PROJECTS_DATA = [
   {
     id: "truth-dare",
     title: "Truth & Dare Bot",
-    subtitle: "Spicy & Romantic Duels",
+    subtitle: "2-Player Party Prompts",
     type: "bot",
     categories: ["bot", "game", "multiplayer"],
     badge: "🌶️ Zero-Repeat",
@@ -478,53 +478,53 @@ const PROJECTS_DATA = [
 // App State
 let activeTheme = localStorage.getItem("telegram_meow_theme") || "pink";
 let sfxEnabled = localStorage.getItem("telegram_meow_sfx") !== "false";
-let currentSelectedProject = PROJECTS_DATA[0];
+let currentCategoryFilter = "all";
+let currentSearchQuery = "";
 
-// Themes Configuration
+// Theme Palette Definitions
 const THEMES = [
-  { id: "pink", name: "🌸 Sakura Pink", dotColor: "#f9849b" },
-  { id: "cyan", name: "🌊 Cyber Cyan", dotColor: "#00b4d8" },
-  { id: "violet", name: "💜 Retro Violet", dotColor: "#c084fc" },
+  { id: "pink", name: "🌸 Sakura Pink", dotColor: "#f43f5e" },
+  { id: "cyan", name: "🌊 Cyber Cyan", dotColor: "#0284c7" },
+  { id: "violet", name: "💜 Retro Violet", dotColor: "#9333ea" },
   { id: "dark", name: "🖤 Midnight Dark", dotColor: "#38bdf8" }
 ];
 
-// Generate Thematic SVG Graphic for Every Project Card
+// Generate Themed SVG Banner for Each Card
 function generateCardSVG(project) {
   const c = project.themeColor || "#f43f5e";
   return `
-    <svg viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:100%;">
+    <svg viewBox="0 0 300 140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
       <defs>
-        <linearGradient id="grad-${project.id}" x1="0%" y1="0%" x2="100%" y2="100%">
+        <linearGradient id="g-${project.id}" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stop-color="#ffffff" />
-          <stop offset="50%" stop-color="${c}" stop-opacity="0.25" />
+          <stop offset="60%" stop-color="${c}" stop-opacity="0.25" />
           <stop offset="100%" stop-color="${c}" stop-opacity="0.85" />
         </linearGradient>
-        <pattern id="grid-${project.id}" width="16" height="16" patternUnits="userSpaceOnUse">
-          <path d="M 16 0 L 0 0 0 16" fill="none" stroke="rgba(0,0,0,0.06)" stroke-width="1"/>
+        <pattern id="pat-${project.id}" width="18" height="18" patternUnits="userSpaceOnUse">
+          <path d="M 18 0 L 0 0 0 18" fill="none" stroke="rgba(0,0,0,0.06)" stroke-width="1"/>
         </pattern>
       </defs>
-      <rect width="200" height="130" fill="url(#grad-${project.id})" />
-      <rect width="200" height="130" fill="url(#grid-${project.id})" />
+      <rect width="300" height="140" fill="url(#g-${project.id})" />
+      <rect width="300" height="140" fill="url(#pat-${project.id})" />
       
-      <!-- Outer Decorative Shapes -->
-      <circle cx="170" cy="20" r="30" fill="${c}" opacity="0.2" />
-      <circle cx="30" cy="110" r="22" fill="#ffffff" opacity="0.4" />
-      <rect x="140" y="85" width="45" height="30" rx="6" fill="#111111" opacity="0.08" />
+      <!-- Ambient Geometry -->
+      <circle cx="260" cy="25" r="35" fill="${c}" opacity="0.25" />
+      <circle cx="40" cy="115" r="28" fill="#ffffff" opacity="0.45" />
       
-      <!-- Center Icon Graphic -->
-      <circle cx="100" cy="55" r="32" fill="#ffffff" stroke="#111111" stroke-width="2" />
-      <text x="100" y="66" font-size="34" text-anchor="middle" font-family="sans-serif">${project.icon}</text>
+      <!-- Central Icon Shield -->
+      <circle cx="150" cy="62" r="34" fill="#ffffff" stroke="#111111" stroke-width="2.5" />
+      <text x="150" y="74" font-size="36" text-anchor="middle" font-family="sans-serif">${project.icon}</text>
       
-      <!-- Bottom Badge Strip -->
-      <rect x="0" y="108" width="200" height="22" fill="#111111" />
-      <text x="100" y="123" font-size="10" font-weight="bold" fill="#ffffff" text-anchor="middle" font-family="'JetBrains Mono', monospace" letter-spacing="1">
+      <!-- Bottom Strip -->
+      <rect x="0" y="118" width="300" height="22" fill="#111111" />
+      <text x="150" y="133" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle" font-family="'JetBrains Mono', monospace" letter-spacing="1.5">
         ${project.tech[0].toUpperCase()} • ${project.type.toUpperCase()}
       </text>
     </svg>
   `;
 }
 
-// Web Audio API Retro Sound Effects
+// Web Audio API Synthesizer
 let audioCtx = null;
 function playSound(type = "click") {
   if (!sfxEnabled) return;
@@ -568,16 +568,14 @@ function playSound(type = "click") {
       osc.stop(now + 0.08);
     }
   } catch (e) {
-    // Audio ignored if blocked
+    // Audio ignored if unsupported/blocked
   }
 }
 
 // App Initialization
 document.addEventListener("DOMContentLoaded", () => {
   applyTheme(activeTheme, false);
-  renderAllShelves();
-  renderQueueList();
-  selectProject(PROJECTS_DATA[0], false);
+  renderAllProjects();
   setupEventListeners();
   setupKeyboardShortcuts();
 });
@@ -590,7 +588,7 @@ function applyTheme(themeId, triggerSfx = true) {
 
   const themeObj = THEMES.find(t => t.id === themeId) || THEMES[0];
   const themeLabel = document.getElementById("themeNameLabel");
-  const themeDot = document.getElementById("currentThemeDot");
+  const themeDot = document.getElementById("themeIndicatorDot");
   if (themeLabel) themeLabel.textContent = themeObj.name;
   if (themeDot) themeDot.style.background = themeObj.dotColor;
 
@@ -604,242 +602,191 @@ function cycleTheme() {
   showToast(`Theme: ${THEMES[nextIndex].name}`);
 }
 
-// Shelf Horizontal Scrolling Helper
-function scrollShelf(trackId, delta) {
-  const track = document.getElementById(trackId);
-  if (track) {
-    track.scrollBy({ left: delta, behavior: "smooth" });
-    playSound("click");
-  }
-}
-
-// Render Project Card Element
-function createCardElement(project) {
-  const card = document.createElement("div");
-  card.className = "neo-card";
-  if (currentSelectedProject && currentSelectedProject.id === project.id) {
-    card.classList.add("active-selected");
-  }
+// Render Project Card Component
+function createProjectCard(project) {
+  const card = document.createElement("article");
+  card.className = "project-card";
   card.setAttribute("data-id", project.id);
 
+  const techHtml = project.tech.slice(0, 3).map(t => `<span class="tech-chip">${t}</span>`).join("");
+  const launchText = project.type === "game" ? "🎮 Play Game" : "🚀 Open Bot";
+
   card.innerHTML = `
-    <div class="neo-card-media">
+    <div class="card-media-banner">
       ${generateCardSVG(project)}
-      <span class="card-badge-pill">${project.badge}</span>
+      <span class="card-type-tag">${project.badge}</span>
     </div>
-    <div class="neo-card-body">
-      <div class="neo-card-title" title="${project.title}">${project.title}</div>
-      <div class="neo-card-subtitle">${project.subtitle}</div>
-      <div class="neo-card-footer">
-        <span class="neo-card-tech-tag">${project.tech[0]}</span>
-        <div class="neo-card-action-btn" title="View Details">ℹ️</div>
+    
+    <div class="card-content-body">
+      <div class="card-heading-group">
+        <h3 class="card-main-title">${project.title}</h3>
+        <span class="card-sub-title">${project.subtitle}</span>
+      </div>
+
+      <p class="card-desc-snippet">${project.description}</p>
+
+      <div class="card-tech-chips">
+        ${techHtml}
+      </div>
+
+      <div class="card-actions-bar">
+        <a href="${project.launchUrl}" target="_blank" rel="noopener noreferrer" class="btn-card-launch" onclick="playSound('launch')">
+          <span>${launchText}</span>
+          <span>↗</span>
+        </a>
+        <button class="btn-card-details" title="View details and commands" aria-label="Details">
+          <span>ℹ️</span>
+        </button>
       </div>
     </div>
   `;
 
-  card.addEventListener("click", (e) => {
-    selectProject(project);
-    if (e.target.closest(".neo-card-action-btn")) {
-      openModal(project);
-    }
-  });
+  const detailsBtn = card.querySelector(".btn-card-details");
+  if (detailsBtn) {
+    detailsBtn.addEventListener("click", () => openModal(project));
+  }
 
-  card.addEventListener("dblclick", () => {
-    openModal(project);
-  });
+  card.addEventListener("dblclick", () => openModal(project));
 
   return card;
 }
 
-// Render All Shelves
-function renderAllShelves() {
-  const botsTrack = document.getElementById("botsTrack");
-  const gamesTrack = document.getElementById("gamesTrack");
-  const utilsTrack = document.getElementById("utilsTrack");
+// Master Render Function for Grids
+function renderAllProjects() {
+  const botsContainer = document.getElementById("botsGridContainer");
+  const gamesContainer = document.getElementById("gamesGridContainer");
+  const botsSection = document.getElementById("sectionBotsContainer");
+  const gamesSection = document.getElementById("sectionGamesContainer");
 
-  if (botsTrack) {
-    botsTrack.innerHTML = "";
-    PROJECTS_DATA.filter(p => p.type === "bot").forEach(p => {
-      botsTrack.appendChild(createCardElement(p));
-    });
-  }
+  const query = currentSearchQuery.toLowerCase().trim();
 
-  if (gamesTrack) {
-    gamesTrack.innerHTML = "";
-    PROJECTS_DATA.filter(p => p.type === "game").forEach(p => {
-      gamesTrack.appendChild(createCardElement(p));
-    });
-  }
+  // Filter items based on Category & Search Query
+  const matchesSearch = (p) => {
+    if (!query) return true;
+    return p.title.toLowerCase().includes(query) ||
+           p.subtitle.toLowerCase().includes(query) ||
+           p.description.toLowerCase().includes(query) ||
+           p.tech.some(t => t.toLowerCase().includes(query)) ||
+           p.commands.some(c => c.toLowerCase().includes(query));
+  };
 
-  if (utilsTrack) {
-    utilsTrack.innerHTML = "";
-    const picks = PROJECTS_DATA.filter(p => 
-      p.id === "pybot" || p.id === "chess" || p.id === "tempmail-bot" || p.id === "uno" || p.id === "price-tracker" || p.id === "paddle"
-    );
-    picks.forEach(p => {
-      utilsTrack.appendChild(createCardElement(p));
-    });
-  }
-}
+  const matchesCategory = (p) => {
+    if (currentCategoryFilter === "all") return true;
+    if (currentCategoryFilter === "bot") return p.type === "bot";
+    if (currentCategoryFilter === "game") return p.type === "game";
+    if (currentCategoryFilter === "multiplayer") return p.categories.includes("multiplayer");
+    if (currentCategoryFilter === "devtools") return p.categories.includes("devtools");
+    return true;
+  };
 
-// Local Filter for Cards in Shelf
-function filterShelfTrack(trackId, query) {
-  const track = document.getElementById(trackId);
-  if (!track) return;
-  const cards = track.querySelectorAll(".neo-card");
-  const cleanQ = query.trim().toLowerCase();
+  const filteredBots = PROJECTS_DATA.filter(p => p.type === "bot" && matchesSearch(p) && matchesCategory(p));
+  const filteredGames = PROJECTS_DATA.filter(p => p.type === "game" && matchesSearch(p) && matchesCategory(p));
 
-  cards.forEach(card => {
-    const id = card.getAttribute("data-id");
-    const proj = PROJECTS_DATA.find(p => p.id === id);
-    if (!proj) return;
-    const match = proj.title.toLowerCase().includes(cleanQ) ||
-                  proj.subtitle.toLowerCase().includes(cleanQ) ||
-                  proj.tech.some(t => t.toLowerCase().includes(cleanQ));
-    card.style.display = match ? "flex" : "none";
-  });
-}
-
-// Render Right Sidebar Quick Launcher List
-function renderQueueList() {
-  const container = document.getElementById("queueListContainer");
-  if (!container) return;
-  container.innerHTML = "";
-
-  PROJECTS_DATA.forEach(project => {
-    const row = document.createElement("div");
-    row.className = "queue-item-row";
-    row.setAttribute("data-id", project.id);
-
-    row.innerHTML = `
-      <div class="queue-item-thumb">
-        <span>${project.icon}</span>
-      </div>
-      <div class="queue-item-meta">
-        <div class="queue-item-title">${project.title}</div>
-        <div class="queue-item-sub">${project.type === "game" ? "WebRTC Game" : "Telegram Bot"}</div>
-      </div>
-      <span class="queue-item-badge">${project.tech[0]}</span>
-    `;
-
-    row.addEventListener("click", () => {
-      selectProject(project);
-      openModal(project);
-    });
-
-    container.appendChild(row);
-  });
-}
-
-// Select Project (Sync with Banner & Dock)
-function selectProject(project, triggerSfx = true) {
-  currentSelectedProject = project;
-
-  // Active Outline in Cards
-  document.querySelectorAll(".neo-card").forEach(card => {
-    if (card.getAttribute("data-id") === project.id) {
-      card.classList.add("active-selected");
+  // Update Bots Grid
+  if (botsContainer) {
+    botsContainer.innerHTML = "";
+    if (filteredBots.length === 0 && currentCategoryFilter !== "game") {
+      botsContainer.innerHTML = `<div style="grid-column: 1/-1; padding: 2rem; text-align: center; color: var(--text-muted); font-weight: 700;">No bots matched "${query}".</div>`;
     } else {
-      card.classList.remove("active-selected");
-    }
-  });
-
-  // Right Queue Banner
-  const queueThumb = document.getElementById("queueActiveThumb");
-  const queueTitle = document.getElementById("queueActiveTitle");
-  const queueSub = document.getElementById("queueActiveSub");
-  const queueBadge = document.getElementById("queueActiveBadge");
-
-  if (queueThumb) queueThumb.textContent = project.icon;
-  if (queueTitle) queueTitle.textContent = project.title;
-  if (queueSub) queueSub.textContent = project.subtitle;
-  if (queueBadge) queueBadge.textContent = project.type.toUpperCase();
-
-  // Bottom Dock
-  const dockEmoji = document.getElementById("dockThumbEmoji");
-  const dockTitle = document.getElementById("dockCurrentTitle");
-  const dockType = document.getElementById("dockCurrentType");
-  const dockLaunchBtn = document.getElementById("dockLaunchBtn");
-  const dockLaunchLabel = document.getElementById("dockLaunchLabel");
-
-  if (dockEmoji) dockEmoji.textContent = project.icon;
-  if (dockTitle) dockTitle.textContent = project.title;
-  if (dockType) dockType.textContent = project.type === "game" ? "HTML5 Web Game" : "Telegram Bot";
-  
-  if (dockLaunchBtn) {
-    dockLaunchBtn.href = project.launchUrl;
-    if (dockLaunchLabel) {
-      dockLaunchLabel.textContent = project.type === "game" ? "Play Web Game" : "Open Telegram Bot";
+      filteredBots.forEach(bot => botsContainer.appendChild(createProjectCard(bot)));
     }
   }
 
-  if (triggerSfx) playSound("click");
+  // Update Games Grid
+  if (gamesContainer) {
+    gamesContainer.innerHTML = "";
+    if (filteredGames.length === 0 && currentCategoryFilter !== "bot") {
+      gamesContainer.innerHTML = `<div style="grid-column: 1/-1; padding: 2rem; text-align: center; color: var(--text-muted); font-weight: 700;">No games matched "${query}".</div>`;
+    } else {
+      filteredGames.forEach(game => gamesContainer.appendChild(createProjectCard(game)));
+    }
+  }
+
+  // Section Visibility based on Category filter
+  if (botsSection) {
+    botsSection.style.display = (currentCategoryFilter === "game" || (filteredBots.length === 0 && query)) ? "none" : "flex";
+  }
+  if (gamesSection) {
+    gamesSection.style.display = (currentCategoryFilter === "bot" || (filteredGames.length === 0 && query)) ? "none" : "flex";
+  }
+
+  // Update Counters
+  const botsBadge = document.getElementById("botsCountBadge");
+  const gamesBadge = document.getElementById("gamesCountBadge");
+  if (botsBadge) botsBadge.textContent = `${filteredBots.length} Active Bots`;
+  if (gamesBadge) gamesBadge.textContent = `${filteredGames.length} WebRTC Games`;
 }
 
-// Open Detail Modal
+// Open Detail Modal Dialog
 function openModal(project) {
-  const modal = document.getElementById("detailModal");
+  const modal = document.getElementById("projectDetailModal");
   const headerTitle = document.getElementById("modalHeaderTitle");
-  const scrollBody = document.getElementById("modalScrollBody");
-  const launchBtn = document.getElementById("modalLaunchBtn");
-  const sourceBtn = document.getElementById("modalSourceBtn");
+  const scrollArea = document.getElementById("modalScrollArea");
+  const primaryLaunchBtn = document.getElementById("modalPrimaryLaunchBtn");
+  const launchLabel = document.getElementById("modalLaunchLabel");
+  const gamesRepoBtn = document.getElementById("modalGamesRepoBtn");
 
-  if (!modal || !scrollBody) return;
+  if (!modal || !scrollArea) return;
 
   if (headerTitle) headerTitle.textContent = project.title;
-  if (launchBtn) {
-    launchBtn.href = project.launchUrl;
-    launchBtn.innerHTML = `<span>🚀</span><span>Launch ${project.type === "game" ? "Web Game" : "Telegram Bot"}</span>`;
+  
+  if (primaryLaunchBtn) {
+    primaryLaunchBtn.href = project.launchUrl;
+    if (launchLabel) {
+      launchLabel.textContent = project.type === "game" ? "Launch Web Game" : "Open Telegram Bot";
+    }
   }
-  if (sourceBtn) {
-    if (project.sourceUrl) {
-      sourceBtn.style.display = "flex";
-      sourceBtn.href = project.sourceUrl;
+
+  // Hide source button for bots; show for games if present
+  if (gamesRepoBtn) {
+    if (project.type === "game" && project.sourceUrl) {
+      gamesRepoBtn.style.display = "flex";
+      gamesRepoBtn.href = project.sourceUrl;
     } else {
-      sourceBtn.style.display = "none";
+      gamesRepoBtn.style.display = "none";
     }
   }
 
   const featuresHtml = project.features.map(f => `<li>${f}</li>`).join("");
-  const techHtml = project.tech.map(t => `<span class="modal-tech-pill">${t}</span>`).join("");
+  const techHtml = project.tech.map(t => `<span class="tech-chip">${t}</span>`).join("");
   const commandsHtml = project.commands.map(cmd => `
-    <div class="cmd-line" onclick="copyCommand('${cmd.replace(/'/g, "\\'")}')" title="Click to copy">
+    <div class="cmd-clickable-row" onclick="copyCommand('${cmd.replace(/'/g, "\\'")}')" title="Click to copy">
       <span>${cmd}</span>
-      <span style="opacity: 0.5; font-size: 0.72rem;">[COPY]</span>
+      <span style="opacity: 0.6; font-size: 0.72rem;">[COPY]</span>
     </div>
   `).join("");
 
-  scrollBody.innerHTML = `
-    <div class="modal-hero-banner">
-      <div class="modal-banner-icon">${project.icon}</div>
+  scrollArea.innerHTML = `
+    <div class="modal-hero-badge">
+      <div class="modal-hero-icon">${project.icon}</div>
       <div>
-        <div class="modal-banner-title">${project.title}</div>
-        <div class="modal-banner-sub">${project.subtitle} • <strong style="color: var(--text-main);">by @anu69-web</strong></div>
+        <div class="modal-hero-title">${project.title}</div>
+        <div class="modal-hero-sub">${project.subtitle} • <strong style="color:var(--text-main);">by @anu69-web</strong></div>
       </div>
     </div>
 
     <div>
-      <div class="modal-section-title">Description</div>
-      <p class="modal-desc-text">${project.longDescription || project.description}</p>
+      <div class="modal-section-h">Overview</div>
+      <p class="modal-body-text">${project.longDescription || project.description}</p>
     </div>
 
     <div>
-      <div class="modal-section-title">Key Capabilities</div>
-      <ul class="modal-features-list">
+      <div class="modal-section-h">Key Features</div>
+      <ul class="modal-caps-list">
         ${featuresHtml}
       </ul>
     </div>
 
     <div>
-      <div class="modal-section-title">Built With</div>
-      <div class="modal-tech-pills">
+      <div class="modal-section-h">Technologies</div>
+      <div class="modal-tech-list">
         ${techHtml}
       </div>
     </div>
 
     <div>
-      <div class="modal-section-title">Interactive Commands & Controls</div>
-      <div class="modal-commands-box">
+      <div class="modal-section-h">Interactive Commands & Controls</div>
+      <div class="modal-cmd-box">
         ${commandsHtml}
       </div>
     </div>
@@ -850,7 +797,7 @@ function openModal(project) {
 }
 
 function closeModal() {
-  const modal = document.getElementById("detailModal");
+  const modal = document.getElementById("projectDetailModal");
   if (modal) {
     modal.classList.remove("active");
     playSound("click");
@@ -868,48 +815,28 @@ function copyCommand(cmdText) {
   });
 }
 
-// Toast
-let toastTimeout = null;
-function showToast(message) {
-  const toast = document.getElementById("toastBox");
-  const msg = document.getElementById("toastMsg");
+// Toast Notification
+let toastTimer = null;
+function showToast(msg) {
+  const toast = document.getElementById("toastMsgBox");
+  const text = document.getElementById("toastMsgText");
   if (!toast) return;
-  if (msg) msg.textContent = message;
-  toast.classList.add("active");
+  if (text) text.textContent = msg;
 
-  clearTimeout(toastTimeout);
-  toastTimeout = setTimeout(() => {
+  toast.classList.add("active");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => {
     toast.classList.remove("active");
-  }, 2000);
+  }, 2200);
 }
 
-// Event Handlers Setup
+// Event Listeners Setup
 function setupEventListeners() {
-  // Theme Toggle Button
+  // Theme Switcher Button
   const themeBtn = document.getElementById("themeSwitchBtn");
   if (themeBtn) themeBtn.addEventListener("click", cycleTheme);
-  const navThemeToggle = document.getElementById("navThemeToggle");
-  if (navThemeToggle) navThemeToggle.addEventListener("click", cycleTheme);
 
-  // Top Nav History Buttons
-  const navPrevBtn = document.getElementById("navPrevBtn");
-  if (navPrevBtn) {
-    navPrevBtn.addEventListener("click", () => {
-      const idx = PROJECTS_DATA.findIndex(p => p.id === currentSelectedProject.id);
-      const prevIdx = (idx - 1 + PROJECTS_DATA.length) % PROJECTS_DATA.length;
-      selectProject(PROJECTS_DATA[prevIdx]);
-    });
-  }
-  const navNextBtn = document.getElementById("navNextBtn");
-  if (navNextBtn) {
-    navNextBtn.addEventListener("click", () => {
-      const idx = PROJECTS_DATA.findIndex(p => p.id === currentSelectedProject.id);
-      const nextIdx = (idx + 1) % PROJECTS_DATA.length;
-      selectProject(PROJECTS_DATA[nextIdx]);
-    });
-  }
-
-  // SFX Toggle
+  // SFX Toggle Button
   const sfxBtn = document.getElementById("sfxToggleBtn");
   if (sfxBtn) {
     sfxBtn.addEventListener("click", () => {
@@ -924,137 +851,58 @@ function setupEventListeners() {
     });
   }
 
-  // Modal Close
+  // Random Discovery Pick Button
+  const randomPickBtn = document.getElementById("randomPickHeaderBtn");
+  if (randomPickBtn) {
+    randomPickBtn.addEventListener("click", () => {
+      const randomItem = PROJECTS_DATA[Math.floor(Math.random() * PROJECTS_DATA.length)];
+      openModal(randomItem);
+      showToast(`Selected: ${randomItem.title}`);
+    });
+  }
+
+  // Search Input
+  const searchInput = document.getElementById("mainSearchInput");
+  if (searchInput) {
+    searchInput.addEventListener("input", (e) => {
+      currentSearchQuery = e.target.value;
+      renderAllProjects();
+    });
+  }
+
+  // Category Filter Chips
+  const filterChips = document.querySelectorAll(".filter-chip");
+  filterChips.forEach(chip => {
+    chip.addEventListener("click", () => {
+      filterChips.forEach(c => c.classList.remove("active"));
+      chip.classList.add("active");
+      currentCategoryFilter = chip.getAttribute("data-filter") || "all";
+      renderAllProjects();
+      playSound("click");
+    });
+  });
+
+  // Modal Close Handlers
   const modalCloseBtn = document.getElementById("modalCloseBtn");
   if (modalCloseBtn) modalCloseBtn.addEventListener("click", closeModal);
-  const modalOverlay = document.getElementById("detailModal");
+
+  const modalOverlay = document.getElementById("projectDetailModal");
   if (modalOverlay) {
     modalOverlay.addEventListener("click", (e) => {
       if (e.target === modalOverlay) closeModal();
     });
   }
-
-  // Global Search Input
-  const globalSearch = document.getElementById("globalSearchInput");
-  if (globalSearch) {
-    globalSearch.addEventListener("input", (e) => {
-      const q = e.target.value.toLowerCase().trim();
-      filterShelfTrack("botsTrack", q);
-      filterShelfTrack("gamesTrack", q);
-      filterShelfTrack("utilsTrack", q);
-    });
-  }
-
-  // Shelf Local Filter Inputs
-  const filterBots = document.getElementById("filterBotsInput");
-  if (filterBots) filterBots.addEventListener("input", (e) => filterShelfTrack("botsTrack", e.target.value));
-  const filterGames = document.getElementById("filterGamesInput");
-  if (filterGames) filterGames.addEventListener("input", (e) => filterShelfTrack("gamesTrack", e.target.value));
-  const filterUtils = document.getElementById("filterUtilsInput");
-  if (filterUtils) filterUtils.addEventListener("input", (e) => filterShelfTrack("utilsTrack", e.target.value));
-
-  // Dock Controls
-  const dockInfoBtn = document.getElementById("dockInfoBtn");
-  if (dockInfoBtn) {
-    dockInfoBtn.addEventListener("click", () => {
-      if (currentSelectedProject) openModal(currentSelectedProject);
-    });
-  }
-
-  const dockPrevBtn = document.getElementById("dockPrevBtn");
-  if (dockPrevBtn) {
-    dockPrevBtn.addEventListener("click", () => {
-      const idx = PROJECTS_DATA.findIndex(p => p.id === currentSelectedProject.id);
-      const prevIdx = (idx - 1 + PROJECTS_DATA.length) % PROJECTS_DATA.length;
-      selectProject(PROJECTS_DATA[prevIdx]);
-    });
-  }
-
-  const dockNextBtn = document.getElementById("dockNextBtn");
-  if (dockNextBtn) {
-    dockNextBtn.addEventListener("click", () => {
-      const idx = PROJECTS_DATA.findIndex(p => p.id === currentSelectedProject.id);
-      const nextIdx = (idx + 1) % PROJECTS_DATA.length;
-      selectProject(PROJECTS_DATA[nextIdx]);
-    });
-  }
-
-  const dockShuffleBtn = document.getElementById("dockShuffleBtn");
-  const randomPickBtn = document.getElementById("randomPickBtn");
-  function pickRandom() {
-    const randomIdx = Math.floor(Math.random() * PROJECTS_DATA.length);
-    selectProject(PROJECTS_DATA[randomIdx]);
-    showToast(`Selected: ${PROJECTS_DATA[randomIdx].title}`);
-  }
-  if (dockShuffleBtn) dockShuffleBtn.addEventListener("click", pickRandom);
-  if (randomPickBtn) randomPickBtn.addEventListener("click", pickRandom);
-
-  // Clear Search
-  const clearSearchBtn = document.getElementById("clearSearchBtn");
-  if (clearSearchBtn) {
-    clearSearchBtn.addEventListener("click", () => {
-      if (globalSearch) globalSearch.value = "";
-      if (filterBots) filterBots.value = "";
-      if (filterGames) filterGames.value = "";
-      if (filterUtils) filterUtils.value = "";
-      renderAllShelves();
-      showToast("Filters reset");
-      playSound("click");
-    });
-  }
-
-  // Left Sidebar Nav Buttons
-  const navBots = document.getElementById("navBots");
-  if (navBots) {
-    navBots.addEventListener("click", () => {
-      document.getElementById("sectionBots")?.scrollIntoView({ behavior: "smooth" });
-      playSound("click");
-    });
-  }
-
-  const navGames = document.getElementById("navGames");
-  if (navGames) {
-    navGames.addEventListener("click", () => {
-      document.getElementById("sectionGames")?.scrollIntoView({ behavior: "smooth" });
-      playSound("click");
-    });
-  }
-
-  const navUtilities = document.getElementById("navUtilities");
-  if (navUtilities) {
-    navUtilities.addEventListener("click", () => {
-      document.getElementById("sectionUtilities")?.scrollIntoView({ behavior: "smooth" });
-      playSound("click");
-    });
-  }
-
-  const navMultiplayer = document.getElementById("navMultiplayer");
-  if (navMultiplayer) {
-    navMultiplayer.addEventListener("click", () => {
-      filterShelfTrack("gamesTrack", "multiplayer");
-      document.getElementById("sectionGames")?.scrollIntoView({ behavior: "smooth" });
-      playSound("click");
-    });
-  }
-
-  const navDashboard = document.getElementById("navDashboard");
-  if (navDashboard) {
-    navDashboard.addEventListener("click", () => {
-      document.getElementById("dashboardContentArea")?.scrollTo({ top: 0, behavior: "smooth" });
-      playSound("click");
-    });
-  }
 }
 
-// Global Keyboard Shortcuts
+// Global Shortcuts
 function setupKeyboardShortcuts() {
   document.addEventListener("keydown", (e) => {
     if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
       e.preventDefault();
-      const globalSearch = document.getElementById("globalSearchInput");
-      if (globalSearch) {
-        globalSearch.focus();
-        globalSearch.select();
+      const searchInput = document.getElementById("mainSearchInput");
+      if (searchInput) {
+        searchInput.focus();
+        searchInput.select();
       }
     }
     if (e.key === "Escape") {
