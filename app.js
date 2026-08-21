@@ -478,15 +478,15 @@ const PROJECTS_DATA = [
 ];
 
 // App State
-let activeTheme = localStorage.getItem("telegram_meow_theme") || "dark";
+let activeTheme = localStorage.getItem("telegram_meow_theme") || "pink";
 let sfxEnabled = localStorage.getItem("telegram_meow_sfx") !== "false";
 let currentCategoryFilter = "all";
 let currentSearchQuery = "";
 
 // Theme Palette Definitions
 const THEMES = [
-  { id: "dark", name: "🖤 Midnight Dark", dotColor: "#38bdf8" },
   { id: "pink", name: "🌸 Sakura Pink", dotColor: "#f43f5e" },
+  { id: "dark", name: "🖤 Midnight Dark", dotColor: "#38bdf8" },
   { id: "cyan", name: "🌊 Cyber Cyan", dotColor: "#0284c7" },
   { id: "violet", name: "💜 Retro Violet", dotColor: "#9333ea" }
 ];
@@ -611,7 +611,7 @@ function createProjectCard(project) {
   card.setAttribute("data-id", project.id);
 
   const techHtml = project.tech.slice(0, 3).map(t => `<span class="tech-chip">${t}</span>`).join("");
-  const launchText = project.type === "game" ? "🎮 Play Game" : "🚀 Open Bot";
+  const launchText = project.type === "game" ? "🎮 Play Game" : "✈️ Open Bot";
 
   card.innerHTML = `
     <div class="card-media-banner">
@@ -634,7 +634,7 @@ function createProjectCard(project) {
       <div class="card-actions-bar">
         ${project.id === "pybot" ? `
           <a href="${project.launchUrl}" target="_blank" rel="noopener noreferrer" class="btn-card-launch" title="Open Telegram Bot (@py_runbot)" onclick="playSound('launch')">
-            <span>🚀</span>
+            <span>✈️</span>
           </a>
           <a href="${project.consoleUrl}" target="_blank" rel="noopener noreferrer" class="btn-card-launch" style="background: var(--bg-surface); border: 2px solid var(--border-color);" title="Launch Python Web Console IDE" onclick="playSound('launch')">
             <span>💻</span>
@@ -734,6 +734,7 @@ function openModal(project) {
   const headerTitle = document.getElementById("modalHeaderTitle");
   const scrollArea = document.getElementById("modalScrollArea");
   const primaryLaunchBtn = document.getElementById("modalPrimaryLaunchBtn");
+  const launchIcon = document.getElementById("modalLaunchIcon");
   const launchLabel = document.getElementById("modalLaunchLabel");
   const secondaryActionBtn = document.getElementById("modalSecondaryActionBtn");
   const secondaryIcon = document.getElementById("modalSecondaryIcon");
@@ -745,6 +746,9 @@ function openModal(project) {
   
   if (primaryLaunchBtn) {
     primaryLaunchBtn.href = project.launchUrl;
+    if (launchIcon) {
+      launchIcon.textContent = project.type === "game" ? "🎮" : "✈️";
+    }
     if (launchLabel) {
       if (project.id === "pybot") {
         launchLabel.textContent = "Open @py_runbot";

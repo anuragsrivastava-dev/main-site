@@ -5,50 +5,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700;800&display=swap');
 
-:root, [data-theme="dark"] {
-  /* Default Theme: Midnight Dark */
-  --bg-page: #0f172a;
-  --bg-surface: #1e293b;
-  --bg-card: #334155;
-  --bg-card-hover: #475569;
-  --bg-card-inner: #1e293b;
-  --bg-badge: #1e293b;
-  --bg-search: #1e293b;
-  
-  --accent: #38bdf8;
-  --accent-secondary: #ec4899;
-  --accent-gradient: linear-gradient(135deg, #38bdf8 0%, #ec4899 100%);
-  --stripe-color-1: #38bdf8;
-  --stripe-color-2: #1e293b;
-  
-  --border-color: #000000;
-  --border-sm: 2px solid var(--border-color);
-  --border-md: 2.5px solid var(--border-color);
-  --border-lg: 3px solid var(--border-color);
-  
-  --shadow-sm: 2px 2px 0px #000000;
-  --shadow-md: 3.5px 3.5px 0px #000000;
-  --shadow-lg: 5px 5px 0px #000000;
-  --shadow-hover: 6px 6px 0px #000000;
-  
-  --radius-sm: 8px;
-  --radius-md: 14px;
-  --radius-lg: 20px;
-  --radius-pill: 9999px;
-  
-  --text-main: #f8fafc;
-  --text-muted: #cbd5e1;
-  --text-dim: #94a3b8;
-  
-  --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
-  
-  --transition-fast: 0.15s ease;
-  --transition-smooth: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-/* Theme: Sakura Pink */
-[data-theme="pink"] {
+:root, [data-theme="pink"] {
+  /* Default Theme: Sakura Pink */
   --bg-page: #fbe4ec;
   --bg-surface: #ffffff;
   --bg-card: #f9a8d4;
@@ -64,14 +22,56 @@
   --stripe-color-2: #ffffff;
   
   --border-color: #111111;
-  --text-main: #111111;
-  --text-muted: #4b5563;
-  --text-dim: #6b7280;
+  --border-sm: 2px solid var(--border-color);
+  --border-md: 2.5px solid var(--border-color);
+  --border-lg: 3px solid var(--border-color);
   
   --shadow-sm: 2px 2px 0px #111111;
   --shadow-md: 3.5px 3.5px 0px #111111;
   --shadow-lg: 5px 5px 0px #111111;
   --shadow-hover: 6px 6px 0px #111111;
+  
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-pill: 9999px;
+  
+  --text-main: #111111;
+  --text-muted: #4b5563;
+  --text-dim: #6b7280;
+  
+  --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  
+  --transition-fast: 0.15s ease;
+  --transition-smooth: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Theme: Midnight Dark */
+[data-theme="dark"] {
+  --bg-page: #0f172a;
+  --bg-surface: #1e293b;
+  --bg-card: #334155;
+  --bg-card-hover: #475569;
+  --bg-card-inner: #1e293b;
+  --bg-badge: #1e293b;
+  --bg-search: #1e293b;
+  
+  --accent: #38bdf8;
+  --accent-secondary: #ec4899;
+  --accent-gradient: linear-gradient(135deg, #38bdf8 0%, #ec4899 100%);
+  --stripe-color-1: #38bdf8;
+  --stripe-color-2: #1e293b;
+  
+  --border-color: #000000;
+  --text-main: #f8fafc;
+  --text-muted: #cbd5e1;
+  --text-dim: #94a3b8;
+  
+  --shadow-sm: 2px 2px 0px #000000;
+  --shadow-md: 3.5px 3.5px 0px #000000;
+  --shadow-lg: 5px 5px 0px #000000;
+  --shadow-hover: 6px 6px 0px #000000;
 }
 
 /* Theme: Cyber Cyan */
