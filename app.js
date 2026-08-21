@@ -10,28 +10,30 @@ const PROJECTS_DATA = [
   // --- TELEGRAM BOTS ---
   {
     id: "pybot",
-    title: "PyBot & Web Console",
-    subtitle: "Remote Python Execution Sandbox",
+    title: "PyBot & Python Console",
+    subtitle: "Remote Sandbox & In-Browser IDE",
     type: "bot",
     categories: ["bot", "devtools"],
     badge: "💻 Dev Tools",
     icon: "🐍",
     themeColor: "#3b82f6",
-    description: "Interactive Python execution bot and Web Console running code in isolated subprocesses with dynamic input patching.",
+    description: "Interactive Python execution bot and Web IDE running code in isolated subprocesses with dynamic input patching.",
     longDescription: "Run and test Python scripts directly within Telegram or via the companion web console. Features sandboxed subprocess execution, dynamic stdin patching for `input()` prompts, 10-second timeout safety nets, and real-time streaming output capture.",
     features: [
+      "CPython 3.12 WebAssembly client-side engine (Pyodide)",
       "Isolated subprocess execution environment",
       "Dynamic input() prompt stream handling",
-      "10-second CPU execution timeout protection",
-      "Paired with companion Web Python Console"
+      "Paired with companion Web Python Console IDE"
     ],
-    tech: ["Python", "Subprocess", "PTB v20+", "Web Console"],
+    tech: ["Python", "Pyodide WASM", "PTB v20+", "CodeMirror"],
     commands: [
       "/run <code> - Execute arbitrary Python snippet",
       "/eval <expr> - Evaluate single expression",
+      "/console - Open full-screen Web IDE",
       "/help - View execution constraints"
     ],
-    launchUrl: "https://t.me/python_exec_bot"
+    launchUrl: "https://t.me/py_runbot",
+    consoleUrl: "https://anu69-web.github.io/python-console/"
   },
   {
     id: "game-bot",
@@ -54,9 +56,9 @@ const PROJECTS_DATA = [
     commands: [
       "/games - Browse available game catalog",
       "/top <game> - Display global and group high scores",
-      "@game_hub_bot - Share game cards in any chat"
+      "@meoww_gamebot - Share game cards in any chat"
     ],
-    launchUrl: "https://t.me/meow_game_bot"
+    launchUrl: "https://t.me/meoww_gamebot"
   },
   {
     id: "hud-bot",
@@ -82,11 +84,11 @@ const PROJECTS_DATA = [
       "/weather - Compare dual-city live weather",
       "/milestone <date> <event> - Add milestone countdown"
     ],
-    launchUrl: "https://t.me/ldr_hud_bot"
+    launchUrl: "https://t.me/ldr_hudbot"
   },
   {
     id: "memory-bot",
-    title: "Memory Match Bot",
+    title: "Memory Magic Bot",
     subtitle: "2-Player Card Flip Duel",
     type: "bot",
     categories: ["bot", "game", "multiplayer"],
@@ -107,7 +109,7 @@ const PROJECTS_DATA = [
       "/grid <3x4|4x4|4x6> - Set custom grid dimension",
       "/stats - View win streaks and leaderboard"
     ],
-    launchUrl: "https://t.me/memory_match_bot"
+    launchUrl: "https://t.me/meow_mmbot"
   },
   {
     id: "price-tracker",
@@ -133,7 +135,7 @@ const PROJECTS_DATA = [
       "/checknow - Force instant price re-scrape",
       "/untrack <id> - Remove product from tracking"
     ],
-    launchUrl: "https://t.me/deal_price_tracker_bot"
+    launchUrl: "https://t.me/meow_pricebot"
   },
   {
     id: "quiz-bot",
@@ -158,7 +160,7 @@ const PROJECTS_DATA = [
       "/progress - Check mastery status and unlocked chapters",
       "/reset - Reset progress and restart course"
     ],
-    launchUrl: "https://t.me/python_quiz_quest_bot"
+    launchUrl: "https://t.me/meow_quizbot"
   },
   {
     id: "shortener-bot",
@@ -183,7 +185,7 @@ const PROJECTS_DATA = [
       "/unshort <short_url> - Trace redirects to original URL",
       "/help - View supported provider backends"
     ],
-    launchUrl: "https://t.me/fast_shortener_bot"
+    launchUrl: "https://t.me/meow_linkbot"
   },
   {
     id: "tempmail-bot",
@@ -209,7 +211,7 @@ const PROJECTS_DATA = [
       "/otp - Instantly extract verification codes from latest mail",
       "/delete - Terminate current inbox session"
     ],
-    launchUrl: "https://t.me/temp_disposable_mail_bot"
+    launchUrl: "https://t.me/meow_tempmailbot"
   },
   {
     id: "truth-dare",
@@ -235,7 +237,7 @@ const PROJECTS_DATA = [
       "/mode <casual|spicy|deep> - Set game intensity level",
       "/duel - Launch 2-player pass-and-play duel"
     ],
-    launchUrl: "https://t.me/truth_dare_meow_bot"
+    launchUrl: "https://t.me/meow_tadbot"
   },
 
   // --- WEB GAMES SUITE ---
@@ -630,10 +632,21 @@ function createProjectCard(project) {
       </div>
 
       <div class="card-actions-bar">
-        <a href="${project.launchUrl}" target="_blank" rel="noopener noreferrer" class="btn-card-launch" onclick="playSound('launch')">
-          <span>${launchText}</span>
-          <span>↗</span>
-        </a>
+        ${project.id === "pybot" ? `
+          <a href="${project.launchUrl}" target="_blank" rel="noopener noreferrer" class="btn-card-launch" onclick="playSound('launch')">
+            <span>🚀 @py_runbot</span>
+            <span>↗</span>
+          </a>
+          <a href="${project.consoleUrl}" target="_blank" rel="noopener noreferrer" class="btn-card-launch" style="background: var(--bg-surface); border: 2px solid var(--border-color);" title="Direct In-Browser Python IDE" onclick="playSound('launch')">
+            <span>💻 Web Console</span>
+            <span>↗</span>
+          </a>
+        ` : `
+          <a href="${project.launchUrl}" target="_blank" rel="noopener noreferrer" class="btn-card-launch" onclick="playSound('launch')">
+            <span>${launchText}</span>
+            <span>↗</span>
+          </a>
+        `}
         <button class="btn-card-details" title="View details and commands" aria-label="Details">
           <span>ℹ️</span>
         </button>
@@ -724,7 +737,9 @@ function openModal(project) {
   const scrollArea = document.getElementById("modalScrollArea");
   const primaryLaunchBtn = document.getElementById("modalPrimaryLaunchBtn");
   const launchLabel = document.getElementById("modalLaunchLabel");
-  const gamesRepoBtn = document.getElementById("modalGamesRepoBtn");
+  const secondaryActionBtn = document.getElementById("modalSecondaryActionBtn");
+  const secondaryIcon = document.getElementById("modalSecondaryIcon");
+  const secondaryLabel = document.getElementById("modalSecondaryLabel");
 
   if (!modal || !scrollArea) return;
 
@@ -733,17 +748,30 @@ function openModal(project) {
   if (primaryLaunchBtn) {
     primaryLaunchBtn.href = project.launchUrl;
     if (launchLabel) {
-      launchLabel.textContent = project.type === "game" ? "Launch Web Game" : "Open Telegram Bot";
+      if (project.id === "pybot") {
+        launchLabel.textContent = "Open @py_runbot";
+      } else if (project.type === "game") {
+        launchLabel.textContent = "Launch Web Game";
+      } else {
+        launchLabel.textContent = "Open Telegram Bot";
+      }
     }
   }
 
-  // Hide source button for bots; show for games if present
-  if (gamesRepoBtn) {
-    if (project.type === "game" && project.sourceUrl) {
-      gamesRepoBtn.style.display = "flex";
-      gamesRepoBtn.href = project.sourceUrl;
+  // Handle Secondary Action Button
+  if (secondaryActionBtn) {
+    if (project.id === "pybot") {
+      secondaryActionBtn.style.display = "flex";
+      secondaryActionBtn.href = project.consoleUrl;
+      if (secondaryIcon) secondaryIcon.textContent = "💻";
+      if (secondaryLabel) secondaryLabel.textContent = "Launch In-Browser Python IDE";
+    } else if (project.type === "game" && project.sourceUrl) {
+      secondaryActionBtn.style.display = "flex";
+      secondaryActionBtn.href = project.sourceUrl;
+      if (secondaryIcon) secondaryIcon.textContent = "📂";
+      if (secondaryLabel) secondaryLabel.textContent = "Games Repo";
     } else {
-      gamesRepoBtn.style.display = "none";
+      secondaryActionBtn.style.display = "none";
     }
   }
 
