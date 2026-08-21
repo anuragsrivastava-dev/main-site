@@ -178,28 +178,56 @@ body {
   gap: 0.5rem;
 }
 
-.app-brand-btn {
+.app-brand-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--bg-card);
+  border: var(--border-width) solid var(--border-color);
+  border-radius: var(--radius-pill);
+  padding: 0.25rem 0.75rem 0.25rem 0.35rem;
+  text-decoration: none;
+  box-shadow: var(--shadow-hard-sm);
+  color: var(--text-main);
+  transition: all var(--transition-fast);
+}
+
+.app-brand-pill:hover {
+  background: var(--bg-card-hover);
+  transform: translate(-1px, -1px);
+  box-shadow: var(--shadow-hard-md);
+}
+
+.app-brand-pill:active {
+  transform: translate(1px, 1px);
+  box-shadow: 0 0 0 transparent;
+}
+
+.brand-icon-circle {
+  width: 1.65rem;
+  height: 1.65rem;
+  border-radius: 50%;
+  background: #111111;
+  color: #ffffff;
+  border: 1.5px solid var(--border-color);
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 2.2rem;
-  height: 2.2rem;
-  background: #111111;
-  color: #ffffff;
-  border: var(--border-width) solid var(--border-color);
-  border-radius: 50%;
-  font-size: 1.1rem;
-  text-decoration: none;
-  box-shadow: var(--shadow-hard-sm);
-  transition: transform var(--transition-fast);
+  font-size: 0.9rem;
+  flex-shrink: 0;
 }
 
-.app-brand-btn:hover {
-  transform: scale(1.05);
+.brand-name-text {
+  font-family: var(--font-main);
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: -0.01em;
+  color: var(--text-main);
 }
 
-.app-brand-btn:active {
-  transform: scale(0.95);
+.brand-name-accent {
+  opacity: 0.75;
+  font-weight: 900;
 }
 
 .nav-history-btns {
