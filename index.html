@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Telegram Ecosystem | AI Bots & Web Games Hub</title>
+  <meta name="description" content="Explore a full-stack ecosystem of intelligent Telegram Bots, AI companions, automation tools, and real-time multiplayer WebRTC Web Games.">
+  <meta name="keywords" content="Telegram Bots, Telegram Games, WebRTC Games, Python Bots, AI Companion, Groq AI, Online Multiplayer Games">
+  <meta name="author" content="anu69-web">
+  
+  <!-- Open Graph / Social Media Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Telegram Bots & Web Games Showcase">
+  <meta property="og:description" content="Intelligent AI Bots, Automation Utilities & Real-Time Multiplayer Web Games built for Telegram.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+</head>
+<body>
+  <!-- Ambient Background Glows -->
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+  <div class="bg-glow bg-glow-3"></div>
+  <div class="bg-grid-pattern"></div>
+
+  <!-- Header / Navigation -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-container">
+      <a href="#" class="brand-logo" id="brandLogo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-title">TELEGRAM<span class="logo-accent">.NEXUS</span></span>
+          <span class="logo-tag">Bots & Games Suite</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="#showcase" class="nav-link active">Ecosystem</a>
+        <a href="#showcase" class="nav-link" onclick="filterByCategory('bot')">Bots</a>
+        <a href="#showcase" class="nav-link" onclick="filterByCategory('game')">Web Games</a>
+        <a href="#tech-stack" class="nav-link">Architecture</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="search-trigger-btn" id="searchTriggerBtn" aria-label="Search projects (Ctrl+K)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <span class="search-hint-text">Quick Search...</span>
+          <kbd class="kbd-shortcut">Ctrl K</kbd>
+        </button>
+        <a href="https://github.com/anu69-web" target="_blank" rel="noopener noreferrer" class="btn-icon github-btn" title="View GitHub Repositories">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="heroSection">
+    <div class="hero-container">
+      <div class="hero-badge">
+        <span class="pulse-dot"></span>
+        <span>Full-Stack Telegram Ecosystem & Web Games</span>
+      </div>
+      
+      <h1 class="hero-title">
+        Intelligent Bots & Real-Time <br>
+        <span class="text-gradient">Multiplayer Web Games</span>
+      </h1>
+      
+      <p class="hero-subtitle">
+        A high-performance suite of AI companions, developer automation bots, utility engines, and P2P WebRTC multiplayer games meticulously crafted for Telegram.
+      </p>
+
+      <!-- Stats Showcase Bar -->
+      <div class="hero-stats">
+        <div class="stat-card">
+          <div class="stat-number" data-target="10">10</div>
+          <div class="stat-label">Telegram Bots</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-card">
+          <div class="stat-number" data-target="9">9</div>
+          <div class="stat-label">HTML5 Games</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-card">
+          <div class="stat-number-text">WebRTC</div>
+          <div class="stat-label">P2P Real-Time</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-card">
+          <div class="stat-number-text">Groq LLM</div>
+          <div class="stat-label">AI Pipeline</div>
+        </div>
+      </div>
+
+      <div class="hero-cta-group">
+        <a href="#showcase" class="btn btn-primary">
+          <span>Explore All Projects</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <polyline points="19 12 12 19 5 12"></polyline>
+          </svg>
+        </a>
+        <a href="#showcase" class="btn btn-secondary" onclick="filterByCategory('game')">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+          </svg>
+          <span>Play Instant Games</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Showcase Section -->
+  <main class="showcase-section" id="showcase">
+    <div class="showcase-container">
+      
+      <!-- Section Header & Filter Controls -->
+      <div class="showcase-controls-wrapper">
+        <div class="section-title-group">
+          <h2 class="section-title">Projects Showcase</h2>
+          <p class="section-subtitle">Browse through our complete catalog of bots, games, and developer tools.</p>
+        </div>
+
+        <div class="controls-bar">
+          <!-- Filter Tabs -->
+          <div class="filter-tabs" id="filterTabs" role="tablist">
+            <button class="filter-tab active" data-filter="all" role="tab" aria-selected="true">
+              <span class="tab-label">All Projects</span>
+              <span class="tab-count" id="count-all">19</span>
+            </button>
+            <button class="filter-tab" data-filter="bot" role="tab" aria-selected="false">
+              <span class="tab-icon">🤖</span>
+              <span class="tab-label">Telegram Bots</span>
+              <span class="tab-count" id="count-bot">10</span>
+            </button>
+            <button class="filter-tab" data-filter="game" role="tab" aria-selected="false">
+              <span class="tab-icon">🎮</span>
+              <span class="tab-label">Web Games</span>
+              <span class="tab-count" id="count-game">9</span>
+            </button>
+            <button class="filter-tab" data-filter="multiplayer" role="tab" aria-selected="false">
+              <span class="tab-icon">👥</span>
+              <span class="tab-label">Multiplayer</span>
+              <span class="tab-count" id="count-multiplayer">6</span>
+            </button>
+            <button class="filter-tab" data-filter="ai-utility" role="tab" aria-selected="false">
+              <span class="tab-icon">⚡</span>
+              <span class="tab-label">AI & Utilities</span>
+              <span class="tab-count" id="count-ai-utility">6</span>
+            </button>
+            <button class="filter-tab" data-filter="devtools" role="tab" aria-selected="false">
+              <span class="tab-icon">💻</span>
+              <span class="tab-label">Dev & Coding</span>
+              <span class="tab-count" id="count-devtools">3</span>
+            </button>
+          </div>
+
+          <!-- Search & Count Bar -->
+          <div class="search-and-status">
+            <div class="search-input-box">
+              <svg class="search-box-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input type="text" id="projectSearchInput" placeholder="Filter by name, tags, features, tech..." autocomplete="off">
+              <button class="clear-search-btn" id="clearSearchBtn" aria-label="Clear Search" style="display: none;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </button>
+            </div>
+            <div class="results-count" id="resultsCount">Showing 19 items</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="projects-grid" id="projectsGrid">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+
+      <!-- Empty State -->
+      <div class="empty-state" id="emptyState" style="display: none;">
+        <div class="empty-icon">🔍</div>
+        <h3>No matching projects found</h3>
+        <p>Try searching with different keywords or switch the filter tab above.</p>
+        <button class="btn btn-secondary" id="resetSearchBtn">Reset Filters</button>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Technical Architecture Highlights -->
+  <section class="tech-stack-section" id="tech-stack">
+    <div class="tech-container">
+      <div class="section-title-group text-center">
+        <h2 class="section-title">Ecosystem Architecture</h2>
+        <p class="section-subtitle">Engineered with modern protocols, asynchronous concurrency, and low-latency P2P networking.</p>
+      </div>
+
+      <div class="tech-cards-grid">
+        <div class="tech-card">
+          <div class="tech-icon-wrapper cyan">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+              <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+              <line x1="6" y1="6" x2="6.01" y2="6"></line>
+              <line x1="6" y1="18" x2="6.01" y2="18"></line>
+            </svg>
+          </div>
+          <h3>Python Asyncio Polling Engine</h3>
+          <p>Master multi-bot runner orchestrating concurrent async task loops with SQLite persistence and dynamic exception isolation.</p>
+          <div class="tech-tags">
+            <span>PTB v20+</span>
+            <span>Asyncio</span>
+            <span>SQLite</span>
+          </div>
+        </div>
+
+        <div class="tech-card">
+          <div class="tech-icon-wrapper purple">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"></path>
+              <path d="M12 6v6l4 2"></path>
+            </svg>
+          </div>
+          <h3>WebRTC PeerJS P2P Networking</h3>
+          <p>Direct peer-to-peer browser communication for multiplayer games with sub-50ms latency and fallback STUN/TURN traversal.</p>
+          <div class="tech-tags">
+            <span>PeerJS</span>
+            <span>WebRTC</span>
+            <span>Web Audio API</span>
+          </div>
+        </div>
+
+        <div class="tech-card">
+          <div class="tech-icon-wrapper green">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+              <line x1="9" y1="9" x2="9.01" y2="9"></line>
+              <line x1="15" y1="9" x2="15.01" y2="9"></line>
+            </svg>
+          </div>
+          <h3>Groq LLM & Multi-Engine AI</h3>
+          <p>Sub-second response streaming powered by ultra-fast inference LLMs with dynamic prompt rewriting and memory retention.</p>
+          <div class="tech-tags">
+            <span>Groq Cloud</span>
+            <span>Llama 3 / OSS</span>
+            <span>Prompt Engine</span>
+          </div>
+        </div>
+
+        <div class="tech-card">
+          <div class="tech-icon-wrapper orange">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+          </div>
+          <h3>Telegram Game HighScore API</h3>
+          <p>Automated score syncing via <code>setGameScore</code> allowing friends and group members to compete on live chat leaderboards.</p>
+          <div class="tech-tags">
+            <span>Telegram WebApp</span>
+            <span>Leaderboards</span>
+            <span>Score Sync</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Project Details Modal -->
+  <div class="modal-backdrop" id="projectModal" aria-hidden="true">
+    <div class="modal-dialog" role="dialog" aria-modal="true">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close modal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="modal-content" id="modalDynamicContent">
+        <!-- Injected via app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast-notification" id="toastNotification">
+    <span class="toast-icon">✓</span>
+    <span class="toast-message" id="toastMessage">Copied to clipboard!</span>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="logo-text">
+            <span class="logo-title">TELEGRAM<span class="logo-accent">.NEXUS</span></span>
+          </div>
+          <p class="footer-bio">An open, modular ecosystem of Telegram AI bots, automation utilities, and interactive web games.</p>
+        </div>
+
+        <div class="footer-links-group">
+          <h4>Ecosystem</h4>
+          <a href="#showcase" onclick="filterByCategory('bot')">All Telegram Bots</a>
+          <a href="#showcase" onclick="filterByCategory('game')">HTML5 Web Games</a>
+          <a href="https://github.com/anu69-web/telegram-bots" target="_blank" rel="noopener">Backend Suite Repo</a>
+          <a href="https://github.com/anu69-web/telegram-games" target="_blank" rel="noopener">Frontend Games Repo</a>
+        </div>
+
+        <div class="footer-links-group">
+          <h4>Developers</h4>
+          <a href="https://github.com/anu69-web" target="_blank" rel="noopener">GitHub Profile</a>
+          <a href="#tech-stack">System Architecture</a>
+          <a href="https://t.me/" target="_blank" rel="noopener">Telegram Contact</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="currentYear">2026</span> Telegram.Nexus. Created with passion for Telegram builders.</p>
+        <p class="footer-status-pill"><span class="pulse-dot-small"></span> All Systems Operational</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- App Script -->
+  <script src="app.js"></script>
+</body>
+</html>
