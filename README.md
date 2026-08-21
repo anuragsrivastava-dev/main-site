@@ -15,7 +15,6 @@ Drop your screenshots, artwork, or logos directly into the following directories
 ### 🤖 Telegram Bots (`assets/images/bots/`)
 | Bot Name | File Path |
 | :--- | :--- |
-| **Meow Bot** | `assets/images/bots/meow-bot.png` |
 | **PyBot & Console** | `assets/images/bots/pybot.png` |
 | **Gaming Hub Bot** | `assets/images/bots/game-bot.png` |
 | **LDR HUD Bot** | `assets/images/bots/hud-bot.png` |

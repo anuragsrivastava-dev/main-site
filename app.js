@@ -9,34 +9,6 @@
 const PROJECTS_DATA = [
   // --- TELEGRAM BOTS ---
   {
-    id: "meow-bot",
-    title: "Meow Bot",
-    subtitle: "AI Companion & Workflow Assistant",
-    type: "bot",
-    categories: ["bot", "ai-utility"],
-    badge: "⚡ Groq LLM",
-    icon: "🐱",
-    image: "assets/images/bots/meow-bot.png",
-    description: "Intelligent companion bot powered by Groq LLMs with persistent chat memory, prompt transformation pipelines, and reminders.",
-    longDescription: "Meow Bot is a sophisticated personal AI assistant engineered with Groq's high-speed inference engine. It maintains long-term contextual memory via SQLite, supports dynamic prompt persona shifting, parses inline queries, and dispatches automated server reminders.",
-    features: [
-      "Groq OpenAI/GPT-OSS ultra-low latency streaming",
-      "SQLite long-term memory extraction & recall",
-      "Dynamic prompt transformation pipelines",
-      "Wispbyte server uptime & task reminders",
-      "Inline query mode for quick query answers in any chat"
-    ],
-    tech: ["Python", "Groq API", "SQLite", "PTB v20+", "Asyncio"],
-    commands: [
-      "/start - Initialize Meow companion session",
-      "/remind <time> <task> - Set automated reminder",
-      "/clear - Reset conversational short-term context",
-      "@meow_bot <query> - Instant inline AI answers"
-    ],
-    launchUrl: "https://t.me/meow_companion_bot",
-    sourceUrl: "https://github.com/anu69-web/telegram-bots/blob/main/meow_bot.py"
-  },
-  {
     id: "pybot",
     title: "PyBot & Python Console",
     subtitle: "Remote Code Execution Engine",
