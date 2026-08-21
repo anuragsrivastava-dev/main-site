@@ -31,8 +31,7 @@ const PROJECTS_DATA = [
       "/eval <expr> - Evaluate single expression",
       "/help - View execution constraints"
     ],
-    launchUrl: "https://t.me/python_exec_bot",
-    sourceUrl: "https://github.com/anu69-web/telegram-bots/blob/main/bot.py"
+    launchUrl: "https://t.me/python_exec_bot"
   },
   {
     id: "game-bot",
@@ -57,8 +56,7 @@ const PROJECTS_DATA = [
       "/top <game> - Display global and group high scores",
       "@game_hub_bot - Share game cards in any chat"
     ],
-    launchUrl: "https://t.me/meow_game_bot",
-    sourceUrl: "https://github.com/anu69-web/telegram-bots/blob/main/game_bot.py"
+    launchUrl: "https://t.me/meow_game_bot"
   },
   {
     id: "hud-bot",
@@ -84,8 +82,7 @@ const PROJECTS_DATA = [
       "/weather - Compare dual-city live weather",
       "/milestone <date> <event> - Add milestone countdown"
     ],
-    launchUrl: "https://t.me/ldr_hud_bot",
-    sourceUrl: "https://github.com/anu69-web/telegram-bots/blob/main/hud_bot.py"
+    launchUrl: "https://t.me/ldr_hud_bot"
   },
   {
     id: "memory-bot",
@@ -110,8 +107,7 @@ const PROJECTS_DATA = [
       "/grid <3x4|4x4|4x6> - Set custom grid dimension",
       "/stats - View win streaks and leaderboard"
     ],
-    launchUrl: "https://t.me/memory_match_bot",
-    sourceUrl: "https://github.com/anu69-web/telegram-bots/blob/main/memory_bot.py"
+    launchUrl: "https://t.me/memory_match_bot"
   },
   {
     id: "price-tracker",
@@ -137,8 +133,7 @@ const PROJECTS_DATA = [
       "/checknow - Force instant price re-scrape",
       "/untrack <id> - Remove product from tracking"
     ],
-    launchUrl: "https://t.me/deal_price_tracker_bot",
-    sourceUrl: "https://github.com/anu69-web/telegram-bots/blob/main/price.py"
+    launchUrl: "https://t.me/deal_price_tracker_bot"
   },
   {
     id: "quiz-bot",
@@ -163,8 +158,7 @@ const PROJECTS_DATA = [
       "/progress - Check mastery status and unlocked chapters",
       "/reset - Reset progress and restart course"
     ],
-    launchUrl: "https://t.me/python_quiz_quest_bot",
-    sourceUrl: "https://github.com/anu69-web/telegram-bots/blob/main/quiz_bot.py"
+    launchUrl: "https://t.me/python_quiz_quest_bot"
   },
   {
     id: "shortener-bot",
@@ -189,8 +183,7 @@ const PROJECTS_DATA = [
       "/unshort <short_url> - Trace redirects to original URL",
       "/help - View supported provider backends"
     ],
-    launchUrl: "https://t.me/fast_shortener_bot",
-    sourceUrl: "https://github.com/anu69-web/telegram-bots/blob/main/shortener_bot.py"
+    launchUrl: "https://t.me/fast_shortener_bot"
   },
   {
     id: "tempmail-bot",
@@ -216,8 +209,7 @@ const PROJECTS_DATA = [
       "/otp - Instantly extract verification codes from latest mail",
       "/delete - Terminate current inbox session"
     ],
-    launchUrl: "https://t.me/temp_disposable_mail_bot",
-    sourceUrl: "https://github.com/anu69-web/telegram-bots/blob/main/tempmail_bot.py"
+    launchUrl: "https://t.me/temp_disposable_mail_bot"
   },
   {
     id: "truth-dare",
@@ -243,8 +235,7 @@ const PROJECTS_DATA = [
       "/mode <casual|spicy|deep> - Set game intensity level",
       "/duel - Launch 2-player pass-and-play duel"
     ],
-    launchUrl: "https://t.me/truth_dare_meow_bot",
-    sourceUrl: "https://github.com/anu69-web/telegram-bots/blob/main/truth_dare_bot.py"
+    launchUrl: "https://t.me/truth_dare_meow_bot"
   },
 
   // --- WEB GAMES SUITE ---
@@ -801,7 +792,12 @@ function openModal(project) {
     launchBtn.innerHTML = `<span>🚀</span><span>Launch ${project.type === "game" ? "Web Game" : "Telegram Bot"}</span>`;
   }
   if (sourceBtn) {
-    sourceBtn.href = project.sourceUrl;
+    if (project.sourceUrl) {
+      sourceBtn.style.display = "flex";
+      sourceBtn.href = project.sourceUrl;
+    } else {
+      sourceBtn.style.display = "none";
+    }
   }
 
   const featuresHtml = project.features.map(f => `<li>${f}</li>`).join("");
