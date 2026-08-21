@@ -10,27 +10,27 @@ const PROJECTS_DATA = [
   // --- TELEGRAM BOTS ---
   {
     id: "pybot",
-    title: "PyBot & Python Console",
-    subtitle: "Remote Sandbox & In-Browser IDE",
+    title: "PyBot & Python Playground",
+    subtitle: "Practice Python & Test Scripts Instantly",
     type: "bot",
     categories: ["bot", "devtools"],
-    badge: "💻 Dev Tools",
+    badge: "🐍 Study & Coding",
     icon: "🐍",
     themeColor: "#3b82f6",
-    description: "Interactive Python execution bot and Web IDE running code in isolated subprocesses with dynamic input patching.",
-    longDescription: "Run and test Python scripts directly within Telegram or via the companion web console. Features sandboxed subprocess execution, dynamic stdin patching for `input()` prompts, 10-second timeout safety nets, and real-time streaming output capture.",
+    description: "A friendly Python sandbox and Web IDE to run code snippets, test assignments, and learn Python directly in chat or browser.",
+    longDescription: "Made to help you easily test and execute Python code without installing complicated software. Run quick calculations, assignments, or full Python scripts in Telegram or via the companion web IDE.",
     features: [
-      "CPython 3.12 WebAssembly client-side engine (Pyodide)",
-      "Isolated subprocess execution environment",
-      "Dynamic input() prompt stream handling",
-      "Paired with companion Web Python Console IDE"
+      "Run Python snippets and homework assignments instantly",
+      "Companion Web IDE with auto-complete and keyboard symbols",
+      "Dynamic input() prompt handling for interactive scripts",
+      "Safe execution environment with instant results"
     ],
     tech: ["Python", "Pyodide WASM", "PTB v20+", "CodeMirror"],
     commands: [
-      "/run <code> - Execute arbitrary Python snippet",
-      "/eval <expr> - Evaluate single expression",
-      "/console - Open full-screen Web IDE",
-      "/help - View execution constraints"
+      "/run <code> - Run any Python code snippet",
+      "/eval <expr> - Quickly calculate an expression",
+      "/console - Open the full in-browser Web IDE",
+      "/help - Learn how to use PyBot"
     ],
     launchUrl: "https://t.me/py_runbot",
     consoleUrl: "https://anu69-web.github.io/python-console/"
@@ -38,204 +38,204 @@ const PROJECTS_DATA = [
   {
     id: "game-bot",
     title: "Gaming Hub Bot",
-    subtitle: "Telegram Arcade Launcher",
+    subtitle: "Our Telegram Arcade & Game Launcher",
     type: "bot",
     categories: ["bot", "game", "multiplayer"],
-    badge: "🏆 Score Sync",
+    badge: "🕹️ Game Arcade",
     icon: "🕹️",
     themeColor: "#f59e0b",
-    description: "Telegram gaming hub serving interactive HTML5 game cards, inline game queries, and synchronized group chat leaderboards.",
-    longDescription: "The central launcher for the entire Telegram Web Games suite. Enables users to launch games inside Telegram WebApps or share inline game cards to group chats with automated score tracking via Telegram's getGameHighScores and setGameScore APIs.",
+    description: "The main gateway for all our fun web games! Share game cards in our chat, start 2-player battles, and keep track of high scores.",
+    longDescription: "Your all-in-one arcade companion for every web game we play together. Launch games inside Telegram, invite each other to instant matches, and challenge high scores!",
     features: [
-      "Inline game card sharing (InlineQueryResultGame)",
-      "High score synchronization via setGameScore API",
-      "Group chat leaderboards with rank badges",
-      "Direct integration with 9+ WebRTC multiplayer games"
+      "Instant game launcher inside Telegram",
+      "Share interactive game cards directly to chat",
+      "Keeps track of high scores and leaderboards",
+      "Quick access to all 9 real-time multiplayer games"
     ],
     tech: ["Telegram Gaming API", "PTB", "SQLite", "WebGL"],
     commands: [
-      "/games - Browse available game catalog",
-      "/top <game> - Display global and group high scores",
-      "@meoww_gamebot - Share game cards in any chat"
+      "/games - Browse all available fun games",
+      "/top <game> - Check high scores and records",
+      "@meoww_gamebot - Share game cards into any chat"
     ],
     launchUrl: "https://t.me/meoww_gamebot"
   },
   {
     id: "hud-bot",
-    title: "LDR HUD Bot",
-    subtitle: "Couple Distance & Weather HUD",
+    title: "LDR Distance & Weather HUD",
+    subtitle: "Our Distance, Clocks & Weather Dashboard",
     type: "bot",
     categories: ["bot", "utility", "multiplayer"],
-    badge: "📍 Geo/Weather",
+    badge: "💖 Long-Distance Love",
     icon: "💖",
     themeColor: "#ec4899",
-    description: "Long-distance couple HUD computing live time offsets, real-time Open-Meteo weather metrics, and Haversine separation distance.",
-    longDescription: "Designed for couples in different time zones. Computes live geographic separation using the Haversine spherical formula, pulls real-time weather and temperature differentials via Open-Meteo API, and tracks milestone countdowns in SQLite.",
+    description: "Tracks the exact distance between our cities, live local weather comparisons, time zone differences, and anniversary countdown milestones.",
+    longDescription: "Built especially for us to bridge the miles. Shows live weather conditions in both of our cities, real-time separation distance, and keeps count of our relationship milestones.",
     features: [
-      "Haversine separation distance calculation (km/mi)",
-      "Live time-zone clock synchronization",
-      "Real-time Open-Meteo weather & forecast integration",
-      "SQLite relationship countdown milestones"
+      "Exact separation distance calculation between us",
+      "Dual-city live time zone clocks",
+      "Real-time weather & temperature comparison",
+      "Anniversary countdown and milestone tracking"
     ],
     tech: ["Python", "Open-Meteo API", "SQLite", "Haversine Math"],
     commands: [
-      "/hud - Render live couple status dashboard",
-      "/distance - Calculate exact geographical separation",
-      "/weather - Compare dual-city live weather",
-      "/milestone <date> <event> - Add milestone countdown"
+      "/hud - Open our complete long-distance dashboard",
+      "/distance - Check the exact distance between us",
+      "/weather - Compare the weather in our cities",
+      "/milestone <date> <event> - Add a special countdown"
     ],
     launchUrl: "https://t.me/ldr_hudbot"
   },
   {
     id: "memory-bot",
     title: "Memory Magic Bot",
-    subtitle: "2-Player Card Flip Duel",
+    subtitle: "Cute 2-Player Card Flip Battle",
     type: "bot",
     categories: ["bot", "game", "multiplayer"],
-    badge: "🃏 2-Player Duel",
+    badge: "🧠 Memory Duel",
     icon: "🧠",
     themeColor: "#8b5cf6",
-    description: "Multiplayer Telegram card-flipping game with concurrency locks, variable grid sizes, mismatch timeouts, and SQLite leaderboards.",
-    longDescription: "A real-time card memory battle playable entirely via Telegram inline keyboard buttons. Supports 3x4 to 4x6 grid difficulties, concurrency mutex locking to prevent simultaneous taps, and persistent win streak stats.",
+    description: "A lovely card-flipping memory match game in Telegram. Flip cards, match cute symbols, and see who has the sharpest memory!",
+    longDescription: "A fun turn-based memory match game we can play right inside Telegram using keyboard buttons. Take turns flipping cards, find matching pairs, and score winning streaks!",
     features: [
-      "Interactive Telegram inline keyboard card grid",
-      "Turn-based concurrency lock mechanisms",
-      "Adjustable grid configurations (3x4 up to 4x6)",
-      "Auto-flip mismatch countdowns and scoring"
+      "Interactive card flipping right in Telegram chat",
+      "Turn-based 2-player duel mode",
+      "Adjustable grid sizes from 3x4 up to 4x6",
+      "Score counters and win streak tracking"
     ],
     tech: ["Python", "Asyncio Locks", "PTB Inline Keyboards", "SQLite"],
     commands: [
-      "/play - Start new solo or 2-player memory match",
-      "/grid <3x4|4x4|4x6> - Set custom grid dimension",
-      "/stats - View win streaks and leaderboard"
+      "/play - Start a new 2-player memory match",
+      "/grid <3x4|4x4|4x6> - Choose board difficulty",
+      "/stats - View win streaks and player scores"
     ],
     launchUrl: "https://t.me/meow_mmbot"
   },
   {
     id: "price-tracker",
     title: "Deal Price Tracker",
-    subtitle: "Amazon & Flipkart Price Alerts",
+    subtitle: "Amazon & Flipkart Price Drop Watcher",
     type: "bot",
     categories: ["bot", "utility", "automation"],
-    badge: "🏷️ Daily Cron",
+    badge: "🛍️ Shopping Helper",
     icon: "📉",
     themeColor: "#10b981",
-    description: "Automated e-commerce price monitor with daily scheduled checks, Jina AI proxy fallbacks, and instant price-drop alerts.",
-    longDescription: "Tracks product price shifts on Amazon and Flipkart. Features automated daily price checks at 12:00 PM IST via APScheduler JobQueue, fallback web scraping via Jina AI reader proxy, and target price alerts.",
+    description: "Never miss a sale! Send any product link from Amazon or Flipkart, and the bot will watch the price daily and alert you the second it drops.",
+    longDescription: "A smart shopping helper created to help you save money. Paste any wishlist item from Amazon or Flipkart, set your desired price, and get instant notifications whenever prices drop.",
     features: [
-      "Multi-platform scraping (Amazon & Flipkart)",
-      "Fallback proxy scraping via Jina AI Reader API",
-      "Automated daily 12:00 PM IST JobQueue checks",
-      "Custom target threshold price-drop alerts"
+      "Monitors prices on Amazon & Flipkart automatically",
+      "Daily automated price checking at 12:00 PM",
+      "Instant notification when an item drops in price",
+      "Track your personal shopping wishlist in one place"
     ],
     tech: ["Python", "BeautifulSoup4", "JobQueue", "Jina AI Proxy"],
     commands: [
-      "/track <url> [target_price] - Add item to watchlist",
-      "/list - View all currently tracked products",
-      "/checknow - Force instant price re-scrape",
-      "/untrack <id> - Remove product from tracking"
+      "/track <url> [target_price] - Add item to price watchlist",
+      "/list - View all products currently being tracked",
+      "/checknow - Force an instant price check",
+      "/untrack <id> - Remove item from watchlist"
     ],
     launchUrl: "https://t.me/meow_pricebot"
   },
   {
     id: "quiz-bot",
     title: "Quiz Quest Bot",
-    subtitle: "Python Curriculum Mastery",
+    subtitle: "Interactive Python Learning Journey",
     type: "bot",
     categories: ["bot", "devtools", "education"],
-    badge: "🎓 100% Mastery",
+    badge: "🎓 Learning Quest",
     icon: "📜",
     themeColor: "#6366f1",
-    description: "Interactive Python mastery quest with chapter progression unlocks requiring 100% score and dynamic admin authoring.",
-    longDescription: "An interactive coding curriculum directly inside Telegram. Features progressive chapter unlocking (requiring 100% mastery to advance), structured explanations, and admin CRUD commands for adding questions.",
+    description: "A fun coding study quest with chapter unlocks and quizzes to help you learn and practice Python step-by-step.",
+    longDescription: "An engaging interactive quiz curriculum inside Telegram. Master programming concepts at your own pace with helpful explanations and chapter progress unlocking.",
     features: [
-      "Strict progression logic requiring 100% chapter mastery",
-      "Interactive multiple-choice inline quiz engine",
-      "Persistent user chapter state in python_progress.json",
-      "Admin CRUD commands for dynamic question authoring"
+      "Bite-sized Python chapters and concepts",
+      "Interactive multiple-choice quiz questions",
+      "Chapter progression and mastery tracking",
+      "Helpful explanations for every answer"
     ],
     tech: ["Python", "PTB v20+", "JSON Store", "Quiz Engine"],
     commands: [
-      "/learn - Open Python curriculum quest menu",
-      "/progress - Check mastery status and unlocked chapters",
-      "/reset - Reset progress and restart course"
+      "/learn - Open the Python learning menu",
+      "/progress - Check your unlocked chapters and score",
+      "/reset - Restart chapters to practice again"
     ],
     launchUrl: "https://t.me/meow_quizbot"
   },
   {
     id: "shortener-bot",
-    title: "Fast Shortener Bot",
-    subtitle: "Multi-Engine URL Routing",
+    title: "Fast Link Shortener",
+    subtitle: "Quick URL Shortener & Link Checker",
     type: "bot",
     categories: ["bot", "utility"],
-    badge: "🔗 Instant API",
+    badge: "⚡ Quick Links",
     icon: "⚡",
     themeColor: "#06b6d4",
-    description: "Lightweight URL shortening and unshortening engine with multi-provider failover routing (ulvis.net, da.gd) and redirect unwinding.",
-    longDescription: "A high-speed URL utility bot. Shrinks long links through multi-provider failover APIs and unwinds obscure shortened links to reveal real landing URLs, safety redirects, and HTTP status headers.",
+    description: "Instantly shortens long, cluttered links into tidy URLs, and unmasks mysterious shortened links to see where they really go.",
+    longDescription: "A quick link assistant. Cleans up super long links for sharing with a single tap, or traces redirect paths to keep you safe from suspicious links.",
     features: [
-      "Multi-provider shortening API routing (ulvis.net, da.gd)",
-      "Instant redirect unwinding for safety analysis",
-      "Automatic URL syntax validation & clean output formatting",
-      "Single-tap copy buttons for shortened links"
+      "One-tap link shortening with instant copy buttons",
+      "Unwind redirects to reveal real destination URLs",
+      "Clean URL formatting without tracking parameters",
+      "Fast multi-service routing backends"
     ],
     tech: ["Python", "Httpx", "Asyncio", "REST APIs"],
     commands: [
-      "/short <url> - Generate shortened URL",
-      "/unshort <short_url> - Trace redirects to original URL",
-      "/help - View supported provider backends"
+      "/short <url> - Generate a clean short link",
+      "/unshort <url> - Trace where a short link leads",
+      "/help - View link shortening tips"
     ],
     launchUrl: "https://t.me/meow_linkbot"
   },
   {
     id: "tempmail-bot",
-    title: "TempMail Bot",
-    subtitle: "Disposable Inbox & OTP",
+    title: "TempMail Inbox Bot",
+    subtitle: "Disposable Email & Quick OTP Finder",
     type: "bot",
     categories: ["bot", "utility"],
-    badge: "📬 15s Poller",
-    icon: "🛡️",
+    badge: "🛡️ Privacy Shield",
+    icon: "📬",
     themeColor: "#14b8a6",
-    description: "Disposable temporary email bot with multi-provider routing (Mail.tm, Guerrilla Mail) and background polling for OTP verification.",
-    longDescription: "Creates throwaway temporary inboxes on demand. Regularly polls mail servers every 15 seconds to deliver verification codes, OTPs, and email messages straight to your Telegram chat.",
+    description: "Creates disposable throwaway email inboxes instantly to protect you from spam and automatically extracts OTP verification codes in seconds.",
+    longDescription: "A privacy helper for signing up to websites without sharing your real email. Generates temporary inboxes on demand and delivers incoming emails and OTP codes directly into your Telegram chat.",
     features: [
-      "Multi-engine API support (Mail.tm, Mail.gw, Guerrilla Mail)",
-      "Background inbox polling every 15 seconds",
-      "Smart Regex OTP and activation link extraction",
-      "SQLite session persistence for active inboxes"
+      "Instant disposable email generation on demand",
+      "Auto-polls every 15s to deliver new incoming mail",
+      "Smart detection to highlight OTP verification codes",
+      "Keeps your real email clean and free of spam"
     ],
     tech: ["Python", "Mail.tm API", "Guerrilla Mail", "SQLite"],
     commands: [
-      "/gen - Generate new temporary disposable email address",
-      "/check - Manually poll inbox for incoming messages",
-      "/otp - Instantly extract verification codes from latest mail",
-      "/delete - Terminate current inbox session"
+      "/gen - Generate a new disposable email address",
+      "/check - Check your temporary inbox for new mail",
+      "/otp - Instantly grab verification codes from latest email",
+      "/delete - Erase inbox and close session"
     ],
     launchUrl: "https://t.me/meow_tempmailbot"
   },
   {
     id: "truth-dare",
     title: "Truth & Dare Bot",
-    subtitle: "2-Player Party Prompts",
+    subtitle: "Fun, Deep & Romantic Couple Prompts",
     type: "bot",
     categories: ["bot", "game", "multiplayer"],
-    badge: "🌶️ Zero-Repeat",
+    badge: "🎲 Couple Prompts",
     icon: "🎲",
     themeColor: "#f43f5e",
-    description: "2-Player Truth or Dare party game with auto-refilling shuffled prompt decks and categorized modes (Casual, Deep, Spicy).",
-    longDescription: "An engaging 2-player social game. Uses a zero-repeat auto-shuffling prompt algorithm, categorized deck intensity selectors, and pass-and-play turn switching.",
+    description: "A fun 2-player Truth or Dare game packed with romantic, deep, and funny prompts for late-night chats and laughing together.",
+    longDescription: "A romantic and playful Truth or Dare party game tailored for us. Features categorized question decks (Casual, Deep, Romantic, Spicy) with automatic shuffle to keep conversations exciting.",
     features: [
       "Categorized decks (Casual, Deep, Romantic, Spicy)",
-      "Auto-refilling shuffled prompt deck with zero-repeat tracking",
-      "2-Player duel mode with interactive turn passing",
-      "Inline keyboard prompt picking"
+      "Zero-repeat prompt shuffling algorithm",
+      "2-Player turn passing duel mode",
+      "One-tap inline prompt draw buttons"
     ],
     tech: ["Python", "Deck Shuffler", "PTB", "Inline Buttons"],
     commands: [
-      "/truth - Draw random categorized truth prompt",
-      "/dare - Draw random categorized dare prompt",
-      "/mode <casual|spicy|deep> - Set game intensity level",
-      "/duel - Launch 2-player pass-and-play duel"
+      "/truth - Draw a random truth question",
+      "/dare - Draw a playful dare prompt",
+      "/mode <casual|romantic|deep|spicy> - Choose prompt mood",
+      "/duel - Start a 2-player turn-based session"
     ],
     launchUrl: "https://t.me/meow_tadbot"
   },
@@ -244,19 +244,19 @@ const PROJECTS_DATA = [
   {
     id: "chess",
     title: "Chess Master SVG",
-    subtitle: "Staunton Engine & WebRTC Duel",
+    subtitle: "Real-Time 2-Player Chess Duel",
     type: "game",
     categories: ["game", "multiplayer"],
-    badge: "⚔️ WebRTC P2P",
+    badge: "⚔️ 2-Player Live",
     icon: "♟️",
     themeColor: "#334155",
-    description: "High-performance Staunton SVG chess engine with full move validation, live material calculation, themes, and P2P in-game chat.",
-    longDescription: "A full-featured Staunton SVG chess game built for Telegram WebApp and browser play. Complete with en passant, castling, pawn promotion, check/checkmate detection, live material advantage tracking, custom board themes, and sub-50ms peer-to-peer multiplayer.",
+    description: "Play real-time chess with me anytime with move legal highlights, live piece advantages, and custom board themes.",
+    longDescription: "A full-featured Staunton SVG chess game built for Telegram WebApp and browser play. Complete with move validation, piece advantage tracking, board themes, and instant peer-to-peer multiplayer.",
     features: [
-      "Complete chess rule engine (en passant, castling, promotion, checkmate)",
-      "PeerJS WebRTC peer-to-peer real-time networking",
-      "Live material advantage differential counter",
-      "In-game chat and audio synthesis sound effects"
+      "Complete chess rule engine with move highlights",
+      "Instant peer-to-peer live multiplayer connection",
+      "Material advantage piece counter",
+      "In-game chat and sound effects"
     ],
     tech: ["Vanilla JS", "SVG Staunton", "PeerJS WebRTC", "Web Audio API"],
     commands: [
@@ -270,19 +270,19 @@ const PROJECTS_DATA = [
   {
     id: "uno",
     title: "Uno Duel 2-Player",
-    subtitle: "Card Battler & Penalties",
+    subtitle: "Fast & Chaotic Card Battle",
     type: "game",
     categories: ["game", "multiplayer"],
-    badge: "🃏 Real-Time Duel",
+    badge: "🎴 Real-Time Card Duel",
     icon: "🎴",
     themeColor: "#ef4444",
-    description: "Fast-paced 2-player Uno card duel with wild color pickers, skip/reverse mechanics, penalty stacking, and WebRTC syncing.",
-    longDescription: "A sleek HTML5 recreation of the classic Uno duel. Features card draw animation, wild card color picking modal, +2 and +4 penalty stacking rules, and instant game state synchronization over WebRTC.",
+    description: "Fast-paced 2-player Uno card duel with Wild color pickers, skip/reverse cards, and stacking +4 penalties!",
+    longDescription: "A sleek, colorful recreation of the classic Uno duel. Features smooth card draw animations, wild color selection wheels, +2 and +4 penalty stacking, and real-time state syncing.",
     features: [
-      "Complete standard Uno rule set with action card mechanics",
+      "Complete Uno rule set with action card mechanics",
       "+2 and +4 card stacking penalty mechanics",
       "Wild color picker wheel dialog",
-      "Sub-50ms WebRTC action state synchronization"
+      "Fast real-time action synchronization"
     ],
     tech: ["HTML5 Canvas", "CSS3 3D", "PeerJS", "Web Audio"],
     commands: [
@@ -296,19 +296,19 @@ const PROJECTS_DATA = [
   {
     id: "paddle",
     title: "Paddle Pong Duel",
-    subtitle: "Inverted Perspective Pong",
+    subtitle: "Fast-Paced 2-Player Ping Pong",
     type: "game",
     categories: ["game", "multiplayer"],
-    badge: "🏓 60 FPS Canvas",
+    badge: "🏓 2-Player Arcade",
     icon: "🏓",
     themeColor: "#0284c7",
-    description: "High-octane multiplayer Pong duel with inverted perspective rendering, 5-heart life bars, dynamic ball spin, and rally streaks.",
-    longDescription: "Fast-paced retro arcade pong duel with inverted dual perspective so each player sees their paddle on the home side. Features particle collision sparks, acceleration physics, and life bar depletion.",
+    description: "Retro multiplayer Pong duel where each player defends their goal with 5 heart lives, spin curves, and rally streaks.",
+    longDescription: "Fast-paced arcade pong duel where both players see their paddle on their home side. Features particle sparks, curve ball physics, and heart health bars.",
     features: [
-      "Inverted perspective coordinate mapping across peers",
-      "Dynamic paddle edge deflection & spin curve physics",
+      "Dual perspective so you always control the bottom paddle",
+      "Paddle deflection and spin curve physics",
       "5-Heart health system with rally streak multipliers",
-      "Collision particle burst effects and retro beep synthesizer"
+      "Particle collision bursts and retro sound effects"
     ],
     tech: ["HTML5 2D Canvas", "WebRTC DataChannels", "Web Audio API"],
     commands: [
@@ -322,14 +322,14 @@ const PROJECTS_DATA = [
   {
     id: "snakes",
     title: "Snakes & Ladders 3D",
-    subtitle: "Isometric Board Quest",
+    subtitle: "Animated 3D Board Game",
     type: "game",
     categories: ["game", "multiplayer"],
     badge: "🎲 3D Board Game",
     icon: "🐍",
     themeColor: "#16a34a",
-    description: "3D animated 100-tile board game with dice physics, player hop animation, sliding ladders, and single-turn roll-again mechanics.",
-    longDescription: "The timeless board game brought to life with animated 3D tokens and isometric board rendering. Features smooth piece hopping, physics-based ladder climbing, sliding snake traps, and bonus turns on rolling a 6.",
+    description: "3D animated 100-tile board game with dice physics, player hopping animations, sliding snakes, and climbing ladders.",
+    longDescription: "The timeless board game brought to life with animated 3D tokens and isometric board views. Smooth piece hopping, ladder climbing, snake sliding traps, and bonus rolls on rolling a 6!",
     features: [
       "Animated tile-by-tile piece hopping transitions",
       "Smooth glide animations for snake slides and ladder climbs",
@@ -348,16 +348,16 @@ const PROJECTS_DATA = [
   {
     id: "flappy-bird",
     title: "Flappy Bird Arcade",
-    subtitle: "Physics Runner & High Scores",
+    subtitle: "Cute Physics Runner & High Scores",
     type: "game",
     categories: ["game", "arcade"],
-    badge: "🕹️ Single/Multi",
+    badge: "🐤 Single & Multi",
     icon: "🐤",
     themeColor: "#eab308",
-    description: "Addictive canvas arcade runner with particle physics, shield power-ups, bonus collectibles, and difficulty scaling.",
-    longDescription: "A polished recreation of the classic arcade runner. Features fluid particle jump trails, shield bubbles, coin collection multipliers, dynamic pipe gap scaling, and high score saving.",
+    description: "Addictive arcade runner with smooth flap physics, protective shield bubbles, bonus stars, and score records.",
+    longDescription: "A polished recreation of the classic arcade runner. Features fluid particle jump trails, shield bubbles, coin collection multipliers, and high score saving.",
     features: [
-      "Precision jump gravity physics with flap velocity smoothing",
+      "Precision jump gravity physics with smooth flaps",
       "Collectable power-up shields and bonus score stars",
       "Progressive pipe gap and velocity difficulty scaling",
       "Instant restart with local and Telegram leaderboard sync"
@@ -374,19 +374,19 @@ const PROJECTS_DATA = [
   {
     id: "frog-fight",
     title: "Frog Fight Arena",
-    subtitle: "Lilypad Strategy Brawler",
+    subtitle: "Cute Pond Strategy & Brawling",
     type: "game",
     categories: ["game", "multiplayer", "arcade"],
-    badge: "🐸 Tactical Arena",
+    badge: "🐸 Pond Battle",
     icon: "🐸",
     themeColor: "#84cc16",
-    description: "Grid-based tactical arena brawler where players tongue-grapple flies, jump between sinking lilypads, and outmaneuver rivals.",
-    longDescription: "An action-packed arcade duel set on an unstable pond of sinking lilypads. Players use tongue whips to collect insects, place water ripples to nudge opponents, and fight for survival as pads submerge.",
+    description: "Cute tactical pond game where funny frogs hop across sinking lilypads, grapple flies with tongues, and outsmart each other.",
+    longDescription: "An action-packed arcade duel set on a pond of sinking lilypads. Use tongue whips to snatch dragonflies, make water ripples, and jump between pads to stay dry!",
     features: [
-      "Dynamic pond simulation with sinking lilypad physics",
-      "Tongue grapple grappling mechanics with projectile hitboxes",
-      "Interactive power-ups: Golden Dragonfly, Super Leap, Splash Shockwave",
-      "Peer-to-peer multiplayer match synchronization"
+      "Dynamic pond simulation with sinking lilypads",
+      "Tongue grapple mechanics to snatch flies and strike rivals",
+      "Fun power-ups: Golden Dragonfly, Super Leap, Water Splash",
+      "Real-time 2-player multiplayer connection"
     ],
     tech: ["HTML5 Canvas", "Sprite Physics", "PeerJS WebRTC"],
     commands: [
@@ -400,19 +400,19 @@ const PROJECTS_DATA = [
   {
     id: "heart-catcher",
     title: "Heart Catcher",
-    subtitle: "Rhythm Drop & Hazard Dodge",
+    subtitle: "Catch Love Hearts & Golden Stars",
     type: "game",
     categories: ["game", "arcade"],
     badge: "💖 Fast Reflexes",
     icon: "❤️",
     themeColor: "#f43f5e",
-    description: "Touch and mouse-controlled arcade catcher featuring bonus multipliers, falling hazard avoidance, and combo streaks.",
-    longDescription: "A vibrant reflex and rhythm catcher game. Catch falling hearts and golden stars while dodging broken glass and thunderstorm hazards to build up high score combos.",
+    description: "Catch falling pink hearts and sparkling golden stars with your basket while dodging thunderstorm hazards to build huge combos!",
+    longDescription: "A sweet, vibrant reflex game. Guide your basket to catch glowing hearts and stars, rack up streak multipliers, and enjoy satisfying chime sounds.",
     features: [
       "Smooth touch, mouse, and arrow key basket motion",
       "Combo streak multiplier system (x2, x4, x8 frenzy mode)",
-      "Floating sparkle particles and satisfying pop chime sounds",
-      "High score persistence and Telegram leaderboard integration"
+      "Sparkle particle bursts and chime sounds",
+      "High score persistence and leaderboard sync"
     ],
     tech: ["Vanilla JavaScript", "Canvas 2D", "Web Audio API"],
     commands: [
@@ -426,19 +426,19 @@ const PROJECTS_DATA = [
   {
     id: "helix-jump",
     title: "Helix Jump 3D",
-    subtitle: "Tower Drop & Physics",
+    subtitle: "Satisfying 3D Ball Tower Drop",
     type: "game",
     categories: ["game", "arcade"],
     badge: "🌀 3D Helix Drop",
     icon: "🌀",
     themeColor: "#06b6d4",
-    description: "3D tower descent game with rotating helix platforms, bouncy ball physics, obstacle avoidance, and stage clear streaks.",
-    longDescription: "Rotate the cylindrical helix tower to drop your bouncing ball through open slits down the skyscraper. Avoid hazardous red sectors, trigger speed boosts, and shatter through platforms.",
+    description: "Rotate the 3D spiral tower to drop your bouncing ball through open gaps with colorful splatter effects and stage clears.",
+    longDescription: "Spin the colorful helix tower to guide your bouncing ball through gaps down the skyscraper. Avoid hazardous red sectors, trigger speed boosts, and smash through platforms!",
     features: [
       "Real-time 3D cylinder slice projection and rotation controls",
-      "Continuous bounce physics with momentum speed-drop breaks",
+      "Continuous bounce physics with momentum speed breaks",
       "Hazardous red zones with instant retry checkpoints",
-      "Satisfying visual splash splatter decals on platform landings"
+      "Satisfying visual paint splash decals on platform landings"
     ],
     tech: ["HTML5 Canvas 3D Projection", "Physics Engine", "Web Audio"],
     commands: [
@@ -452,17 +452,17 @@ const PROJECTS_DATA = [
   {
     id: "tower-builder",
     title: "Tower Builder 3D",
-    subtitle: "Precision Stacking Engine",
+    subtitle: "Stack Our Tower to the Sky",
     type: "game",
     categories: ["game", "arcade"],
-    badge: "🏢 Isometric Stack",
+    badge: "🏢 Pastel Stacking",
     icon: "🏗️",
     themeColor: "#a855f7",
-    description: "Isometric tower stacking game with slice physics, dynamic pastel color gradients, perfect-drop combo bonuses, and height scoring.",
-    longDescription: "Stack oscillating building blocks with pinpoint precision. Overhanging block segments slice off and tumble down with realistic gravity. Land perfect alignments to expand your block dimensions and achieve sky-high records.",
+    description: "Stack moving pastel building blocks with precision timing. Build our skyscraper as high into the sky as you can!",
+    longDescription: "Stack oscillating building blocks with pinpoint precision. Overhanging segments slice off with realistic gravity. Land perfect alignments to expand your blocks and reach the clouds!",
     features: [
       "Dynamic block slicing physics with falling debris particles",
-      "Chroma gradient generation that transitions as tower ascends",
+      "Pastel chroma gradient transitions as the tower ascends",
       "Perfect placement combo sound chords and block expansion",
       "Perspective camera climbing as tower height grows"
     ],
