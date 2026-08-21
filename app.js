@@ -476,17 +476,17 @@ const PROJECTS_DATA = [
 ];
 
 // App State
-let activeTheme = localStorage.getItem("telegram_meow_theme") || "pink";
+let activeTheme = localStorage.getItem("telegram_meow_theme") || "dark";
 let sfxEnabled = localStorage.getItem("telegram_meow_sfx") !== "false";
 let currentCategoryFilter = "all";
 let currentSearchQuery = "";
 
 // Theme Palette Definitions
 const THEMES = [
+  { id: "dark", name: "🖤 Midnight Dark", dotColor: "#38bdf8" },
   { id: "pink", name: "🌸 Sakura Pink", dotColor: "#f43f5e" },
   { id: "cyan", name: "🌊 Cyber Cyan", dotColor: "#0284c7" },
-  { id: "violet", name: "💜 Retro Violet", dotColor: "#9333ea" },
-  { id: "dark", name: "🖤 Midnight Dark", dotColor: "#38bdf8" }
+  { id: "violet", name: "💜 Retro Violet", dotColor: "#9333ea" }
 ];
 
 // Generate Themed SVG Banner for Each Card
