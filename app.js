@@ -33,7 +33,7 @@ const PROJECTS_DATA = [
       "/help - Learn how to use PyBot"
     ],
     launchUrl: "https://t.me/py_runbot",
-    consoleUrl: "https://anu69-web.github.io/python-console/"
+    consoleUrl: "https://anuragsrivastava-dev.github.io/python-console/"
   },
   {
     id: "game-bot",
@@ -264,8 +264,8 @@ const PROJECTS_DATA = [
       "Toggle Theme: Classic Wood, Neon Cyber, Midnight Obsidian",
       "Click pieces to view legal moves and attack vectors"
     ],
-    launchUrl: "https://anu69-web.github.io/telegram-games/chess/",
-    sourceUrl: "https://github.com/anu69-web/telegram-games/tree/main/chess"
+    launchUrl: "https://anuragsrivastava-dev.github.io/telegram-games/chess/",
+    sourceUrl: "https://github.com/anuragsrivastava-dev/telegram-games/tree/main/chess"
   },
   {
     id: "uno",
@@ -290,8 +290,8 @@ const PROJECTS_DATA = [
       "Select color from popup wheel when playing Wild cards",
       "Click UNO button before discarding penultimate card"
     ],
-    launchUrl: "https://anu69-web.github.io/telegram-games/uno/",
-    sourceUrl: "https://github.com/anu69-web/telegram-games/tree/main/uno"
+    launchUrl: "https://anuragsrivastava-dev.github.io/telegram-games/uno/",
+    sourceUrl: "https://github.com/anuragsrivastava-dev/telegram-games/tree/main/uno"
   },
   {
     id: "paddle",
@@ -316,8 +316,8 @@ const PROJECTS_DATA = [
       "Hit ball with paddle corners for aggressive angled returns",
       "Defend your goal line until opponent hearts deplete"
     ],
-    launchUrl: "https://anu69-web.github.io/telegram-games/paddle/",
-    sourceUrl: "https://github.com/anu69-web/telegram-games/tree/main/paddle"
+    launchUrl: "https://anuragsrivastava-dev.github.io/telegram-games/paddle/",
+    sourceUrl: "https://github.com/anuragsrivastava-dev/telegram-games/tree/main/paddle"
   },
   {
     id: "snakes",
@@ -342,8 +342,8 @@ const PROJECTS_DATA = [
       "Watch token automatically navigate board tiles",
       "First player to land exactly on tile 100 wins match"
     ],
-    launchUrl: "https://anu69-web.github.io/telegram-games/snakes/",
-    sourceUrl: "https://github.com/anu69-web/telegram-games/tree/main/snakes"
+    launchUrl: "https://anuragsrivastava-dev.github.io/telegram-games/snakes/",
+    sourceUrl: "https://github.com/anuragsrivastava-dev/telegram-games/tree/main/snakes"
   },
   {
     id: "flappy-bird",
@@ -368,8 +368,8 @@ const PROJECTS_DATA = [
       "Fly through green pipes without touching borders",
       "Collect floating shield gems for invulnerability"
     ],
-    launchUrl: "https://anu69-web.github.io/telegram-games/flappy-bird/",
-    sourceUrl: "https://github.com/anu69-web/telegram-games/tree/main/flappy-bird"
+    launchUrl: "https://anuragsrivastava-dev.github.io/telegram-games/flappy-bird/",
+    sourceUrl: "https://github.com/anuragsrivastava-dev/telegram-games/tree/main/flappy-bird"
   },
   {
     id: "frog-fight",
@@ -394,8 +394,8 @@ const PROJECTS_DATA = [
       "Aim and fire tongue grapple to snatch flies or strike opponent",
       "Stay on dry lilypads to avoid sinking into pond"
     ],
-    launchUrl: "https://anu69-web.github.io/telegram-games/frog-fight/",
-    sourceUrl: "https://github.com/anu69-web/telegram-games/tree/main/frog-fight"
+    launchUrl: "https://anuragsrivastava-dev.github.io/telegram-games/frog-fight/",
+    sourceUrl: "https://github.com/anuragsrivastava-dev/telegram-games/tree/main/frog-fight"
   },
   {
     id: "heart-catcher",
@@ -420,8 +420,8 @@ const PROJECTS_DATA = [
       "Catch pink and gold hearts to increase score streak",
       "Dodge black lightning bolts to protect your 3 lives"
     ],
-    launchUrl: "https://anu69-web.github.io/telegram-games/heart-catcher/",
-    sourceUrl: "https://github.com/anu69-web/telegram-games/tree/main/heart-catcher"
+    launchUrl: "https://anuragsrivastava-dev.github.io/telegram-games/heart-catcher/",
+    sourceUrl: "https://github.com/anuragsrivastava-dev/telegram-games/tree/main/heart-catcher"
   },
   {
     id: "helix-jump",
@@ -446,8 +446,8 @@ const PROJECTS_DATA = [
       "Guide bouncing ball through gaps without touching red hazard tiles",
       "Fall through 3+ consecutive gaps to trigger power smash mode"
     ],
-    launchUrl: "https://anu69-web.github.io/telegram-games/helix-jump/",
-    sourceUrl: "https://github.com/anu69-web/telegram-games/tree/main/helix-jump"
+    launchUrl: "https://anuragsrivastava-dev.github.io/telegram-games/helix-jump/",
+    sourceUrl: "https://github.com/anuragsrivastava-dev/telegram-games/tree/main/helix-jump"
   },
   {
     id: "tower-builder",
@@ -472,8 +472,8 @@ const PROJECTS_DATA = [
       "Align blocks perfectly with layer below to avoid trimming",
       "Chain 5 perfect drops to trigger block expansion bonus"
     ],
-    launchUrl: "https://anu69-web.github.io/telegram-games/tower-builder/",
-    sourceUrl: "https://github.com/anu69-web/telegram-games/tree/main/tower-builder"
+    launchUrl: "https://anuragsrivastava-dev.github.io/telegram-games/tower-builder/",
+    sourceUrl: "https://github.com/anuragsrivastava-dev/telegram-games/tree/main/tower-builder"
   }
 ];
 
@@ -791,7 +791,7 @@ function openModal(project) {
       <div class="modal-hero-icon">${project.icon}</div>
       <div>
         <div class="modal-hero-title">${project.title}</div>
-        <div class="modal-hero-sub">${project.subtitle} • <strong style="color:var(--text-main);">by @anu69-web</strong></div>
+        <div class="modal-hero-sub">${project.subtitle} • <strong style="color:var(--text-main);">by @anuragsrivastava-dev</strong></div>
       </div>
     </div>
 

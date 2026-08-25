@@ -1,9 +1,9 @@
 # 🌐 Telegram.Meow — Portfolio Showcase & Landing Page
 
-[![Hosting](https://img.shields.io/badge/Hosting-GitHub_Pages_%7C_Custom_Domain-22272E?style=for-the-badge&logo=githubpages)](https://anu69-web.github.io/main-site/)
+[![Hosting](https://img.shields.io/badge/Hosting-GitHub_Pages_%7C_Custom_Domain-22272E?style=for-the-badge&logo=githubpages)](https://anuragsrivastava-dev.github.io/main-site/)
 [![Frontend](https://img.shields.io/badge/Frontend-Vanilla_HTML5_%7C_CSS3_%7C_ES6-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org)
 [![Aesthetics](https://img.shields.io/badge/Design-Glassmorphism_%7C_Neobrutalism-6C5CE7?style=for-the-badge)](https://developer.mozilla.org/en-US/docs/Web/CSS)
-[![Author](https://img.shields.io/badge/Author-anu69--web-blue?style=for-the-badge&logo=github)](https://github.com/anu69-web)
+[![Author](https://img.shields.io/badge/Author-anuragsrivastava--dev-blue?style=for-the-badge&logo=github)](https://github.com/anuragsrivastava-dev)
 
 A responsive, dynamic showcase landing page presenting the entire ecosystem of **asynchronous Python Telegram bots**, **real-time peer-to-peer WebRTC HTML5 games**, and **developer utilities**.
 
@@ -68,12 +68,12 @@ Drop custom screenshots, banners, or logos directly into the following directori
 ## 🚀 Deployment & Custom Domain
 
 1. **Deploy to GitHub Pages**:
-   - Push repository to `https://github.com/anu69-web/main-site.git`.
+   - Push repository to `https://github.com/anuragsrivastava-dev/main-site.git`.
    - In repository Settings $\rightarrow$ Pages $\rightarrow$ Deploy from branch `main` (`/root`).
 
 2. **Custom Domain Configuration**:
    - Add a `CNAME` file in the root directory containing your custom domain.
-   - Point your DNS `CNAME` record to `anu69-web.github.io`.
+   - Point your DNS `CNAME` record to `anuragsrivastava-dev.github.io`.
 
 3. **Run Locally**:
    ```bash
@@ -85,4 +85,4 @@ Drop custom screenshots, banners, or logos directly into the following directori
 ---
 
 ## 📄 License
-Crafted and maintained by [anu69-web](https://github.com/anu69-web).
+Crafted and maintained by [anuragsrivastava-dev](https://github.com/anuragsrivastava-dev).
