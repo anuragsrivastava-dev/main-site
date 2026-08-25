@@ -38,14 +38,14 @@ const PROJECTS_DATA = [
   {
     id: "game-bot",
     title: "Gaming Hub Bot",
-    subtitle: "Our Telegram Arcade & Game Launcher",
+    subtitle: "Multiplayer Telegram Games Hub",
     type: "bot",
     categories: ["bot", "game", "multiplayer"],
     badge: "🕹️ Game Arcade",
     icon: "🕹️",
     themeColor: "#f59e0b",
-    description: "The main gateway for all our fun web games! Share game cards in our chat, start 2-player battles, and keep track of high scores.",
-    longDescription: "Your all-in-one arcade companion for every web game we play together. Launch games inside Telegram, invite each other to instant matches, and challenge high scores!",
+    description: "The central gateway for multiplayer HTML5 games! Dispatches interactive game cards in chat, handles P2P matchmaking, and tracks live leaderboards.",
+    longDescription: "An all-in-one gaming gateway for Telegram. Launches instant client-side WebRTC games, invites friends to matches, and syncs match scores via Telegram's Game API.",
     features: [
       "Instant game launcher inside Telegram",
       "Share interactive game cards directly to chat",
@@ -54,7 +54,7 @@ const PROJECTS_DATA = [
     ],
     tech: ["Telegram Gaming API", "PTB", "SQLite", "WebGL"],
     commands: [
-      "/games - Browse all available fun games",
+      "/games - Browse all available games",
       "/top <game> - Check high scores and records",
       "@meoww_gamebot - Share game cards into any chat"
     ],
@@ -62,50 +62,50 @@ const PROJECTS_DATA = [
   },
   {
     id: "hud-bot",
-    title: "LDR Distance & Weather HUD",
-    subtitle: "Our Distance, Clocks & Weather Dashboard",
+    title: "World Clock & GeoOps HUD",
+    subtitle: "Global Clocks, Weather & Milestone HUD",
     type: "bot",
-    categories: ["bot", "utility", "multiplayer"],
-    badge: "💖 Long-Distance Love",
-    icon: "💖",
-    themeColor: "#ec4899",
-    description: "Tracks the exact distance between our cities, live local weather comparisons, time zone differences, and anniversary countdown milestones.",
-    longDescription: "Built especially for us to bridge the miles. Shows live weather conditions in both of our cities, real-time separation distance, and keeps count of our relationship milestones.",
+    categories: ["bot", "utility"],
+    badge: "🌐 Operations HUD",
+    icon: "🌐",
+    themeColor: "#0284c7",
+    description: "Multi-timezone synchronizer, Open-Meteo weather intelligence, Haversine geodesic distance calculator, and sprint milestone countdown engine.",
+    longDescription: "An operations dashboard designed for distributed workflows. Displays live clocks across global tech hubs, compares live local weather, calculates geodesic distances between coordinates, and tracks project milestones.",
     features: [
-      "Exact separation distance calculation between us",
-      "Dual-city live time zone clocks",
-      "Real-time weather & temperature comparison",
-      "Anniversary countdown and milestone tracking"
+      "Live clocks across international tech hubs",
+      "Real-time weather data via Open-Meteo API",
+      "Geodesic distance calculation via Haversine formula",
+      "Project milestone and release deadline countdowns"
     ],
     tech: ["Python", "Open-Meteo API", "SQLite", "Haversine Math"],
     commands: [
-      "/hud - Open our complete long-distance dashboard",
-      "/distance - Check the exact distance between us",
-      "/weather - Compare the weather in our cities",
-      "/milestone <date> <event> - Add a special countdown"
+      "/hud - Display live operations dashboard",
+      "/events - View upcoming project countdowns",
+      "/add <title> <date> - Add target milestone",
+      "/del <id> - Delete a milestone"
     ],
     launchUrl: "https://t.me/ldr_hudbot"
   },
   {
     id: "memory-bot",
-    title: "Memory Magic Bot",
-    subtitle: "Cute 2-Player Card Flip Battle",
+    title: "Memory Match Bot",
+    subtitle: "2-Player Card Flip Duel",
     type: "bot",
     categories: ["bot", "game", "multiplayer"],
     badge: "🧠 Memory Duel",
     icon: "🧠",
     themeColor: "#8b5cf6",
-    description: "A lovely card-flipping memory match game in Telegram. Flip cards, match cute symbols, and see who has the sharpest memory!",
-    longDescription: "A fun turn-based memory match game we can play right inside Telegram using keyboard buttons. Take turns flipping cards, find matching pairs, and score winning streaks!",
+    description: "A turn-based card-flipping memory match game inside Telegram. Flip cards, match symbols, and climb chat leaderboards.",
+    longDescription: "A competitive turn-based memory match game played inside Telegram messages via dynamic inline keyboards. Includes concurrency locking to prevent rapid multi-tap race conditions and SQLite score tracking.",
     features: [
       "Interactive card flipping right in Telegram chat",
-      "Turn-based 2-player duel mode",
+      "Turn-based 2-player duel mode with concurrency locks",
       "Adjustable grid sizes from 3x4 up to 4x6",
       "Score counters and win streak tracking"
     ],
     tech: ["Python", "Asyncio Locks", "PTB Inline Keyboards", "SQLite"],
     commands: [
-      "/play - Start a new 2-player memory match",
+      "/match - Start a new 2-player memory match",
       "/grid <3x4|4x4|4x6> - Choose board difficulty",
       "/stats - View win streaks and player scores"
     ],
@@ -215,27 +215,27 @@ const PROJECTS_DATA = [
   },
   {
     id: "truth-dare",
-    title: "Truth & Dare Bot",
-    subtitle: "Fun, Deep & Romantic Couple Prompts",
+    title: "Truth & Dare Party Bot",
+    subtitle: "Social Icebreaker & Challenge Deck",
     type: "bot",
     categories: ["bot", "game", "multiplayer"],
-    badge: "🎲 Couple Prompts",
+    badge: "🎲 Party Game",
     icon: "🎲",
     themeColor: "#f43f5e",
-    description: "A fun 2-player Truth or Dare game packed with romantic, deep, and funny prompts for late-night chats and laughing together.",
-    longDescription: "A romantic and playful Truth or Dare party game tailored for us. Features categorized question decks (Casual, Deep, Romantic, Spicy) with automatic shuffle to keep conversations exciting.",
+    description: "Interactive social icebreaker and party game bot with 200+ trivia, tech dilemma, funny storytelling, and creative dare prompts.",
+    longDescription: "A lively social party bot for Telegram group chats and private sessions. Features auto-refilling zero-repeat shuffled prompt decks, one-tap inline draw buttons, and multi-player turn rotation.",
     features: [
-      "Categorized decks (Casual, Deep, Romantic, Spicy)",
+      "200+ curated icebreaker & challenge prompts",
       "Zero-repeat prompt shuffling algorithm",
-      "2-Player turn passing duel mode",
-      "One-tap inline prompt draw buttons"
+      "Interactive inline keyboard buttons",
+      "Works seamlessly in group chats and DMs"
     ],
     tech: ["Python", "Deck Shuffler", "PTB", "Inline Buttons"],
     commands: [
-      "/truth - Draw a random truth question",
-      "/dare - Draw a playful dare prompt",
-      "/mode <casual|romantic|deep|spicy> - Choose prompt mood",
-      "/duel - Start a 2-player turn-based session"
+      "/tnd - Spin up interactive game board",
+      "/truth - Draw an engaging Truth prompt",
+      "/dare - Draw a fun Dare challenge",
+      "/random - Draw a random prompt"
     ],
     launchUrl: "https://t.me/meow_tadbot"
   },
@@ -400,14 +400,14 @@ const PROJECTS_DATA = [
   {
     id: "heart-catcher",
     title: "Heart Catcher",
-    subtitle: "Catch Love Hearts & Golden Stars",
+    subtitle: "Catch Glowing Gems & Stars",
     type: "game",
     categories: ["game", "arcade"],
     badge: "💖 Fast Reflexes",
     icon: "❤️",
     themeColor: "#f43f5e",
-    description: "Catch falling pink hearts and sparkling golden stars with your basket while dodging thunderstorm hazards to build huge combos!",
-    longDescription: "A sweet, vibrant reflex game. Guide your basket to catch glowing hearts and stars, rack up streak multipliers, and enjoy satisfying chime sounds.",
+    description: "Catch falling gems and sparkling stars with your basket while dodging hazards to build huge combos!",
+    longDescription: "A fast-paced reflex arcade game. Guide your basket to catch glowing gems and stars, rack up streak multipliers, and enjoy satisfying chime sounds.",
     features: [
       "Smooth touch, mouse, and arrow key basket motion",
       "Combo streak multiplier system (x2, x4, x8 frenzy mode)",
@@ -452,13 +452,13 @@ const PROJECTS_DATA = [
   {
     id: "tower-builder",
     title: "Tower Builder 3D",
-    subtitle: "Stack Our Tower to the Sky",
+    subtitle: "Stack the Tower to the Sky",
     type: "game",
     categories: ["game", "arcade"],
     badge: "🏢 Pastel Stacking",
     icon: "🏗️",
     themeColor: "#a855f7",
-    description: "Stack moving pastel building blocks with precision timing. Build our skyscraper as high into the sky as you can!",
+    description: "Stack moving pastel building blocks with precision timing. Build the skyscraper as high into the sky as you can!",
     longDescription: "Stack oscillating building blocks with pinpoint precision. Overhanging segments slice off with realistic gravity. Land perfect alignments to expand your blocks and reach the clouds!",
     features: [
       "Dynamic block slicing physics with falling debris particles",
